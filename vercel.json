@@ -1,15 +1,15 @@
 {
   "redirects": [
-    { "source": "/doctors/dr-john-cole/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/dr-john-cole/", "permanent": false },
     { "source": "/team/", "destination": "https://www.hairtransplant-trainingcenter.com/team/", "permanent": false },
+    { "source": "/team/dr-john-cole/", "destination": "https://www.hairtransplant-trainingcenter.com/team/dr-john-cole/", "permanent": false },
     { "source": "/team/dr-ozgur-oztan/", "destination": "https://www.hairtransplant-trainingcenter.com/team/dr-ozgur-oztan/", "permanent": false },
-    { "source": "/doctors/dr-akin/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/dr-akin/", "permanent": false },
-    { "source": "/doctors/dr-cengiz/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/dr-cengiz/", "permanent": false },
-    { "source": "/doctors/dr-ali/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/dr-ali/", "permanent": false },
-    { "source": "/doctors/goekhan-dogan/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/goekhan-dogan/", "permanent": false },
-    { "source": "/doctors/hairforlife/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/hairforlife/", "permanent": false },
+    { "source": "/team/dr-cengiz/", "destination": "https://www.hairtransplant-trainingcenter.com/team/dr-cengiz/", "permanent": false },
+    { "source": "/team/dr-ali/", "destination": "https://www.hairtransplant-trainingcenter.com/team/dr-ali/", "permanent": false },
+    { "source": "/team/goekhan-dogan/", "destination": "https://www.hairtransplant-trainingcenter.com/team/goekhan-dogan/", "permanent": false },
+    { "source": "/team/hairforlife/", "destination": "https://www.hairtransplant-trainingcenter.com/team/hairforlife/", "permanent": false },
     { "source": "/hair-transplant-training-course/", "destination": "https://www.hairtransplant-trainingcenter.com/hair-transplant-training-course/", "permanent": false },
     { "source": "/fue-workshop/", "destination": "https://www.hairtransplant-trainingcenter.com/fue-workshop/", "permanent": false },
-    { "source": "/general-information/introduction-objectives-2/", "destination": "https://www.hairtransplant-trainingcenter.com/general-information/introduction-objectives-2/", "permanent": false }
+    { "source": "/general-information/introduction-objectives-2/", "destination": "https://www.hairtransplant-trainingcenter.com/general-information/introduction-objectives-2/", "permanent": false },
+    { "source": "/contact/", "destination": "https://www.hairtransplant-trainingcenter.com/contact/", "permanent": false }
   ]
 }

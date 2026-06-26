@@ -415,3 +415,14 @@
   /* inline content links (verbatim WP copy) */
   .ilink{color:var(--blue);font-weight:600;text-decoration:none;transition:color .2s,text-decoration .2s}
   .ilink:hover{color:var(--cyan);text-decoration:underline}
+
+  /* About — founder photo cards */
+  .fteam{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:20px;margin-top:12px}
+  .fcard{display:block;background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .4s}
+  .fcard:hover{transform:translateY(-6px);box-shadow:0 30px 58px -30px rgba(10,31,61,.32);border-color:transparent}
+  .fcard .ph{aspect-ratio:1/1;overflow:hidden;background:var(--paper-2)}
+  .fcard .ph img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s var(--ease)}
+  .fcard:hover .ph img{transform:scale(1.05)}
+  .fcard .fb{padding:17px 18px 20px}
+  .fcard h4{font-size:1.06rem;font-weight:600;color:var(--ink)}
+  .fcard .role{font-size:.8rem;color:var(--blue);font-weight:600;margin-top:5px;line-height:1.32}
