@@ -603,3 +603,8 @@
   .faq.faq-light .faq-item[open]{background:var(--white);border-color:rgba(9,167,224,.4)}
   .faq.faq-light .faq-item summary{color:var(--ink)}
   .faq.faq-light .faq-a{color:var(--slate)}
+
+  /* card icon badges + heading line-height polish */
+  .gnum svg{width:24px;height:24px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .gcard h4,.fcard h4,.tm h4,.inst h4,.vs-card h3,.doc-card h4{line-height:1.22}
+  .tsec-head h2,.cover h2,.faq-intro h2{line-height:1.12}
