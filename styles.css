@@ -483,3 +483,7 @@
   .fcard-static{cursor:default}
   .fcard-static:hover{transform:none;box-shadow:0 30px 60px -34px rgba(10,31,61,.42)}
   .fcard-static:hover .ph img{transform:none}
+
+  /* text-only subhero (no photo band) needs bottom breathing room */
+  .subhero-plain{padding-bottom:100px}
+  @media(max-width:680px){.subhero-plain{padding-bottom:66px}}
