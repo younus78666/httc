@@ -685,3 +685,15 @@
     .ag-time .t2::before{content:"– "}
     .ag-body{padding:18px 20px}
   }
+
+  /* FAQ page — category groups */
+  .faqpage{max-width:880px;margin:0 auto}
+  .faq-cat{font-size:1.4rem;font-weight:700;color:var(--ink);margin:50px 0 20px;padding-bottom:14px;border-bottom:2px solid var(--line);display:flex;align-items:center;gap:12px}
+  .faq-cat:first-child{margin-top:0}
+  .faq-cat .qn{flex:none;width:32px;height:32px;border-radius:9px;background:rgba(9,167,224,.12);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:.84rem;font-weight:700}
+  .faq-close{max-width:880px;margin:54px auto 0;background:linear-gradient(165deg,var(--navy),#081a33);border-radius:20px;padding:42px 40px;color:#fff;text-align:center;position:relative;overflow:hidden}
+  .faq-close::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--cyan)}
+  .faq-close h3{font-size:1.5rem;font-weight:600;color:#fff}
+  .faq-close p{color:rgba(255,255,255,.72);margin:14px auto 24px;max-width:52ch;line-height:1.6}
+  .faq-close .cta-row{justify-content:center}
+  .faq-close a.ilink{color:var(--cyan)}
