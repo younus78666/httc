@@ -728,3 +728,11 @@
   .consent a{color:var(--blue);font-weight:600}
   .cform .btn{width:100%;justify-content:center}
   @media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:34px}.cform{padding:28px 22px}}
+
+  /* price band — ready-to-start strip */
+  .price-strip{margin-top:40px;background:rgba(9,167,224,.08);border:1px solid rgba(9,167,224,.24);border-radius:16px;padding:22px 28px;display:flex;align-items:center;gap:18px}
+  .price-strip .ps-ic{flex:none;width:44px;height:44px;border-radius:12px;background:rgba(9,167,224,.16);display:flex;align-items:center;justify-content:center}
+  .price-strip .ps-ic svg{width:22px;height:22px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .price-strip p{color:rgba(255,255,255,.82);font-size:1.02rem;line-height:1.6;margin:0}
+  .price-strip p a{color:var(--cyan);font-weight:600}
+  @media(max-width:640px){.price-strip{flex-direction:column;align-items:flex-start;gap:14px;padding:20px}}
