@@ -1,5 +1,4 @@
 {
-  "comment": "Temporary 302 redirects for pages not yet migrated to the new site. Remove each entry once the matching page is built on Vercel so the internal link resolves locally. Source paths mirror the WordPress permalinks used in /about-httc/.",
   "redirects": [
     { "source": "/doctors/dr-john-cole/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/dr-john-cole/", "permanent": false },
     { "source": "/team/", "destination": "https://www.hairtransplant-trainingcenter.com/team/", "permanent": false },
