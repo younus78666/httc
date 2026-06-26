@@ -668,3 +668,20 @@
     .flow-step:last-child{border-left-color:transparent;padding-bottom:0}
     .flow-node{flex:none;width:48px;height:48px;margin-bottom:0;margin-left:-45px;background:var(--navy)}
   }
+
+  /* ===== AGENDA SCHEDULE (typical day) ===== */
+  .agenda{max-width:860px;margin:52px auto 0;display:flex;flex-direction:column;gap:14px}
+  .ag-item{display:grid;grid-template-columns:132px 1fr;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;transition:background .35s,border-color .35s,transform .35s var(--ease)}
+  .ag-item:hover{background:rgba(9,167,224,.07);border-color:rgba(9,167,224,.32);transform:translateX(5px)}
+  .ag-time{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:22px 22px;background:rgba(9,167,224,.06);border-right:1px solid rgba(255,255,255,.1)}
+  .ag-time .t1{font-family:'Lexend',sans-serif;font-weight:700;color:var(--cyan);font-size:1.08rem;line-height:1.1}
+  .ag-time .t2{color:rgba(255,255,255,.5);font-size:.9rem;line-height:1.1}
+  .ag-body{padding:20px 26px}
+  .ag-body h4{color:#fff;font-weight:600;font-size:1.14rem;line-height:1.25}
+  .ag-body p{color:rgba(255,255,255,.64);font-size:.97rem;line-height:1.6;margin-top:6px}
+  @media(max-width:640px){
+    .ag-item{grid-template-columns:1fr}
+    .ag-time{flex-direction:row;align-items:center;gap:8px;border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:13px 20px}
+    .ag-time .t2::before{content:"– "}
+    .ag-body{padding:18px 20px}
+  }
