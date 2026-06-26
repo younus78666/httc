@@ -1,9 +1,5 @@
 {
   "redirects": [
-    { "source": "/general-information/introduction-objectives-2/", "destination": "https://www.hairtransplant-trainingcenter.com/general-information/introduction-objectives-2/", "permanent": false },
-    { "source": "/blog/", "destination": "https://www.hairtransplant-trainingcenter.com/blog/", "permanent": false },
-    { "source": "/cit-fue-hair-transplant-from-dr-cole/", "destination": "https://www.hairtransplant-trainingcenter.com/cit-fue-hair-transplant-from-dr-cole/", "permanent": false },
-    { "source": "/about-the-pcid-from-coleinstruments/", "destination": "https://www.hairtransplant-trainingcenter.com/about-the-pcid-from-coleinstruments/", "permanent": false },
-    { "source": "/fue-hair-transplant-tools-instruments-devices/", "destination": "https://www.hairtransplant-trainingcenter.com/fue-hair-transplant-tools-instruments-devices/", "permanent": false }
+    { "source": "/general-information/introduction-objectives-2/", "destination": "https://www.hairtransplant-trainingcenter.com/general-information/introduction-objectives-2/", "permanent": false }
   ]
 }
