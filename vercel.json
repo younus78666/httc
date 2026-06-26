@@ -1,10 +1,9 @@
 {
   "redirects": [
-    { "source": "/hair-transplant-training-course/", "destination": "https://www.hairtransplant-trainingcenter.com/hair-transplant-training-course/", "permanent": false },
-    { "source": "/fue-workshop/", "destination": "https://www.hairtransplant-trainingcenter.com/fue-workshop/", "permanent": false },
     { "source": "/general-information/introduction-objectives-2/", "destination": "https://www.hairtransplant-trainingcenter.com/general-information/introduction-objectives-2/", "permanent": false },
     { "source": "/contact/", "destination": "https://www.hairtransplant-trainingcenter.com/contact/", "permanent": false },
     { "source": "/faq/", "destination": "https://www.hairtransplant-trainingcenter.com/faq/", "permanent": false },
+    { "source": "/blog/", "destination": "https://www.hairtransplant-trainingcenter.com/blog/", "permanent": false },
     { "source": "/cit-fue-hair-transplant-from-dr-cole/", "destination": "https://www.hairtransplant-trainingcenter.com/cit-fue-hair-transplant-from-dr-cole/", "permanent": false },
     { "source": "/about-the-pcid-from-coleinstruments/", "destination": "https://www.hairtransplant-trainingcenter.com/about-the-pcid-from-coleinstruments/", "permanent": false },
     { "source": "/fue-hair-transplant-tools-instruments-devices/", "destination": "https://www.hairtransplant-trainingcenter.com/fue-hair-transplant-tools-instruments-devices/", "permanent": false }
