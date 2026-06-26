@@ -497,14 +497,19 @@
   .facts .v{color:var(--ink);font-weight:600;font-size:.95rem;text-align:right}
   .facts .v .em{color:var(--blue)}
   /* instructor mini-cards inside article */
-  .inst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:14px 0 6px}
-  .inst{display:flex;flex-direction:column;gap:9px;padding:20px 18px;background:var(--white);border:1px solid var(--line);border-radius:14px;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
-  .inst:hover{transform:translateY(-4px);box-shadow:0 24px 48px -28px rgba(10,31,61,.3)}
-  .inst img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:top center}
-  .inst h4{font-size:1.02rem;font-weight:600;color:var(--ink);margin:0}
-  .inst .r{font-size:.84rem;color:var(--slate);line-height:1.4;flex:1}
-  .inst .pl{font-size:.82rem;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:6px}
-  .inst:hover .pl{color:var(--cyan)}
+  .inst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:16px 0 6px}
+  .inst{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .4s}
+  .inst:hover{transform:translateY(-7px);box-shadow:0 36px 66px -32px rgba(10,31,61,.36);border-color:transparent}
+  .inst-photo{aspect-ratio:4/3;overflow:hidden;background:var(--paper-2)}
+  .inst-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .8s var(--ease)}
+  .inst:hover .inst-photo img{transform:scale(1.05)}
+  .inst-b{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+  .inst-b h4{font-size:1.18rem;font-weight:600;color:var(--ink);margin:0}
+  .inst-b .r{font-size:.95rem;color:var(--slate);line-height:1.6;margin-top:10px;flex:1}
+  .inst-b .pl{font-size:.85rem;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:7px;margin-top:20px}
+  .inst:hover .inst-b .pl{color:var(--cyan)}
+  .inst-b .pl .arr{transition:transform .35s var(--ease)}
+  .inst:hover .inst-b .pl .arr{transform:translateX(4px)}
   /* comparison / data tables */
   .ctable-wrap{overflow-x:auto;margin:16px 0 8px}
   .ctable{width:100%;border-collapse:collapse;font-size:.95rem;min-width:480px}
