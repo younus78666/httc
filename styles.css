@@ -566,3 +566,40 @@
   .certcallout .btn{width:100%;justify-content:center}
   .priceband .eyebrow{color:var(--cyan)}
   .priceband .eyebrow::before{background:var(--cyan)}
+
+  /* ===== COMPARISON (you watch vs you operate) ===== */
+  .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
+  .vs-card{border-radius:20px;padding:40px 36px;border:1px solid var(--line);background:var(--white)}
+  .vs-card.is-them{background:var(--paper)}
+  .vs-card.is-us{background:linear-gradient(165deg,var(--navy),#081a33);border-color:rgba(9,167,224,.28);color:#fff;box-shadow:0 44px 84px -42px rgba(10,31,61,.55);position:relative;overflow:hidden}
+  .vs-card.is-us::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--cyan)}
+  .vs-tag{font-family:'Lexend',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  .vs-card.is-them .vs-tag{color:var(--slate)}
+  .vs-card.is-us .vs-tag{color:var(--cyan)}
+  .vs-card h3{font-size:1.45rem;font-weight:600;margin:12px 0 20px;letter-spacing:-.01em}
+  .vs-card.is-them h3{color:var(--ink)}
+  .vs-card.is-us h3{color:#fff}
+  .vs-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .vs-list li{position:relative;padding-left:34px;font-size:1.02rem;line-height:1.5}
+  .vs-card.is-them .vs-list li{color:var(--slate)}
+  .vs-card.is-us .vs-list li{color:rgba(255,255,255,.86)}
+  .vs-list li .ic{position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;line-height:1}
+  .vs-card.is-them .vs-list li .ic{background:rgba(14,28,44,.08);color:var(--slate)}
+  .vs-card.is-us .vs-list li .ic{background:var(--cyan);color:var(--navy-900)}
+  @media(max-width:760px){.vs-grid{grid-template-columns:1fr}}
+  /* instructors 3-up (About-style fcards) */
+  .fteam.cols-3 .fcard{flex:0 1 calc((100% - 48px)/3)}
+  @media(max-width:860px){.fteam.cols-3 .fcard{flex:0 1 calc((100% - 24px)/2)}}
+  @media(max-width:560px){.fteam.cols-3 .fcard{flex:0 1 100%}}
+
+  /* light FAQ variant */
+  .faq.faq-light{background:var(--cream);color:var(--ink)}
+  .faq.faq-light::after{display:none}
+  .faq.faq-light .faq-intro h2{color:var(--ink)}
+  .faq.faq-light .faq-intro p{color:var(--slate)}
+  .faq.faq-light .faq-intro .eyebrow{color:var(--blue)}
+  .faq.faq-light .faq-intro .eyebrow::before{background:var(--blue)}
+  .faq.faq-light .faq-item{background:var(--white);border-color:var(--line)}
+  .faq.faq-light .faq-item[open]{background:var(--white);border-color:rgba(9,167,224,.4)}
+  .faq.faq-light .faq-item summary{color:var(--ink)}
+  .faq.faq-light .faq-a{color:var(--slate)}
