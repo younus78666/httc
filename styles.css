@@ -623,3 +623,8 @@
   .cert-meta .cm-seal svg{width:22px;height:22px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .certframe .btn{width:100%;justify-content:center}
   @media(max-width:980px){.outcome-grid{grid-template-columns:1fr;gap:46px}.certframe{max-width:480px;margin:0 auto}}
+
+  /* simple check list (verbatim single-line items) */
+  .clist{list-style:none;display:flex;flex-direction:column;gap:13px;margin-top:8px}
+  .clist li{position:relative;padding-left:32px;color:var(--slate);font-size:1.04rem;line-height:1.5}
+  .clist li::before{content:"✓";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:rgba(9,167,224,.14);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:700}
