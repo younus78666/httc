@@ -634,7 +634,7 @@
   .clist li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);color:var(--ink);font-size:1.06rem;line-height:1.55}
   .clist li:first-child{padding-top:4px}
   .clist li:last-child{border-bottom:none;padding-bottom:0}
-  .clist li::before{content:"✓";flex:none;width:29px;height:29px;border-radius:9px;background:var(--navy);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:.84rem;font-weight:700;margin-top:1px}
+  .clist li::before{content:"✓";flex:none;width:29px;height:29px;border-radius:9px;background:rgba(9,167,224,.16);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.84rem;font-weight:700;margin-top:1px}
 
   /* ===== TABS (What you will learn) ===== */
   .tabs{max-width:940px;margin:0 auto}
