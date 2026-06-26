@@ -697,3 +697,27 @@
   .faq-close p{color:rgba(255,255,255,.72);margin:14px auto 24px;max-width:52ch;line-height:1.6}
   .faq-close .cta-row{justify-content:center}
   .faq-close a.ilink{color:var(--cyan)}
+
+  /* ===== CONTACT PAGE ===== */
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+  .cinfo{display:flex;flex-direction:column;gap:16px}
+  .ci-item{display:flex;gap:16px;align-items:flex-start;padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:14px;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+  .ci-item:hover{transform:translateY(-3px);box-shadow:0 24px 48px -30px rgba(10,31,61,.3);border-color:rgba(9,167,224,.3)}
+  .ci-ic{flex:none;width:46px;height:46px;border-radius:12px;background:rgba(9,167,224,.12);display:flex;align-items:center;justify-content:center}
+  .ci-ic svg{width:22px;height:22px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .ci-t{font-family:'Lexend',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+  .ci-v{color:var(--ink);font-size:1rem;line-height:1.5;word-break:break-word}
+  .ci-v a{color:var(--ink)}
+  .ci-v a:hover{color:var(--blue)}
+  .cform{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:38px;box-shadow:0 40px 80px -44px rgba(10,31,61,.4)}
+  .cform h3{font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:22px}
+  .fld{margin-bottom:16px}
+  .fld label{display:block;font-size:.84rem;font-weight:600;color:var(--ink);margin-bottom:7px}
+  .cform input,.cform textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:10px;font-family:'Lexend',sans-serif;font-size:.96rem;color:var(--ink);background:var(--paper);transition:border-color .2s,background .2s}
+  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--cyan);background:#fff}
+  .cform textarea{min-height:130px;resize:vertical}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin:8px 0 22px;font-size:.86rem;color:var(--slate);line-height:1.5}
+  .consent input{width:auto;margin-top:3px;flex:none;accent-color:var(--blue)}
+  .consent a{color:var(--blue);font-weight:600}
+  .cform .btn{width:100%;justify-content:center}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:34px}.cform{padding:28px 22px}}

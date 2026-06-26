@@ -1,7 +1,6 @@
 {
   "redirects": [
     { "source": "/general-information/introduction-objectives-2/", "destination": "https://www.hairtransplant-trainingcenter.com/general-information/introduction-objectives-2/", "permanent": false },
-    { "source": "/contact/", "destination": "https://www.hairtransplant-trainingcenter.com/contact/", "permanent": false },
     { "source": "/blog/", "destination": "https://www.hairtransplant-trainingcenter.com/blog/", "permanent": false },
     { "source": "/imprint/", "destination": "https://www.hairtransplant-trainingcenter.com/imprint/", "permanent": false },
     { "source": "/privacy-policy/", "destination": "https://www.hairtransplant-trainingcenter.com/privacy-policy/", "permanent": false },
