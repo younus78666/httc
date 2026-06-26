@@ -411,3 +411,7 @@
   .prov p{color:var(--slate);font-size:.95rem;margin-top:3px}
   .found-feature{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-bottom:56px}
   @media(max-width:980px){.provide-grid,.found-feature{grid-template-columns:1fr;gap:46px}.figure img{min-height:340px}}
+
+  /* inline content links (verbatim WP copy) */
+  .ilink{color:var(--blue);font-weight:600;text-decoration:none;transition:color .2s,text-decoration .2s}
+  .ilink:hover{color:var(--cyan);text-decoration:underline}

@@ -1,0 +1,16 @@
+{
+  "comment": "Temporary 302 redirects for pages not yet migrated to the new site. Remove each entry once the matching page is built on Vercel so the internal link resolves locally. Source paths mirror the WordPress permalinks used in /about-httc/.",
+  "redirects": [
+    { "source": "/doctors/dr-john-cole/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/dr-john-cole/", "permanent": false },
+    { "source": "/team/", "destination": "https://www.hairtransplant-trainingcenter.com/team/", "permanent": false },
+    { "source": "/team/dr-ozgur-oztan/", "destination": "https://www.hairtransplant-trainingcenter.com/team/dr-ozgur-oztan/", "permanent": false },
+    { "source": "/doctors/dr-akin/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/dr-akin/", "permanent": false },
+    { "source": "/doctors/dr-cengiz/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/dr-cengiz/", "permanent": false },
+    { "source": "/doctors/dr-ali/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/dr-ali/", "permanent": false },
+    { "source": "/doctors/goekhan-dogan/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/goekhan-dogan/", "permanent": false },
+    { "source": "/doctors/hairforlife/", "destination": "https://www.hairtransplant-trainingcenter.com/doctors/hairforlife/", "permanent": false },
+    { "source": "/hair-transplant-training-course/", "destination": "https://www.hairtransplant-trainingcenter.com/hair-transplant-training-course/", "permanent": false },
+    { "source": "/fue-workshop/", "destination": "https://www.hairtransplant-trainingcenter.com/fue-workshop/", "permanent": false },
+    { "source": "/general-information/introduction-objectives-2/", "destination": "https://www.hairtransplant-trainingcenter.com/general-information/introduction-objectives-2/", "permanent": false }
+  ]
+}
