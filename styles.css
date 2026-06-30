@@ -801,8 +801,8 @@
   .post-article h2{font-size:clamp(1.5rem,2.4vw,1.95rem);font-weight:700;color:var(--ink);margin:46px 0 16px;letter-spacing:-.01em;line-height:1.2}
   .post-article h3{font-size:1.28rem;font-weight:600;color:var(--ink);margin:34px 0 12px;line-height:1.25}
   .post-article h4{font-size:1.08rem;font-weight:700;color:var(--blue);margin:24px 0 8px}
-  .post-article a{color:var(--blue);font-weight:600}
-  .post-article a:hover{color:var(--cyan);text-decoration:underline}
+  .post-article a:not(.btn){color:var(--blue);font-weight:600}
+  .post-article a:not(.btn):hover{color:var(--cyan);text-decoration:underline}
   .post-article img{width:100%;border-radius:14px;margin:30px 0;display:block}
   .post-article figure{margin:30px 0}
   .post-article figure img{margin:0}
@@ -856,3 +856,31 @@
   .side-cta .btn{width:100%;justify-content:center}
   .post-article h2,.post-article h3{scroll-margin-top:104px}
   @media(max-width:980px){.postlayout{grid-template-columns:1fr;gap:40px}.post-main{max-width:760px;margin:0 auto}.post-side{position:static;max-width:760px;margin:0 auto;width:100%}.toc{max-height:none}}
+
+  /* ===== IN-ARTICLE DARK CTA BLOCK ===== */
+  .post-cta{background:linear-gradient(165deg,var(--navy),#081a33);border:1px solid rgba(9,167,224,.22);border-radius:18px;padding:34px 36px;margin:40px 0;position:relative;overflow:hidden}
+  .post-cta::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--cyan)}
+  .post-cta::after{content:"";position:absolute;top:-30%;right:-6%;width:42%;height:120%;background:radial-gradient(circle,rgba(9,167,224,.16),transparent 62%);filter:blur(18px)}
+  .post-cta>*{position:relative;z-index:2}
+  .post-cta .eyebrow{color:var(--cyan)}
+  .post-cta .eyebrow::before{background:var(--cyan)}
+  .post-cta h3{color:#fff;font-size:1.4rem;font-weight:600;margin:14px 0 0;line-height:1.25}
+  .post-cta p{color:rgba(255,255,255,.74);font-size:1.02rem;line-height:1.6;margin:14px 0 0}
+  .post-cta-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .post-cta .btn-outline{color:#fff;border-color:rgba(255,255,255,.32)}
+  .post-cta .btn-outline:hover{color:var(--cyan);border-color:var(--cyan)}
+  /* ===== IN-ARTICLE FAQ ACCORDION ===== */
+  .post-faq{background:var(--white);border:1px solid var(--line);border-radius:12px;margin:0 0 12px;overflow:hidden;transition:border-color .3s}
+  .post-faq[open]{border-color:rgba(9,167,224,.4)}
+  .post-faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-family:'Lexend',sans-serif;font-weight:600;font-size:1.06rem;color:var(--ink);line-height:1.35}
+  .post-faq summary::-webkit-details-marker{display:none}
+  .post-faq .faq-ic{flex:none;position:relative;width:18px;height:18px}
+  .post-faq .faq-ic::before,.post-faq .faq-ic::after{content:"";position:absolute;background:var(--cyan);border-radius:2px;transition:transform .35s var(--ease)}
+  .post-faq .faq-ic::before{top:8px;left:0;width:18px;height:2px}
+  .post-faq .faq-ic::after{top:0;left:8px;width:2px;height:18px}
+  .post-faq[open] .faq-ic::after{transform:scaleY(0)}
+  .post-faq .faq-a{padding:0 22px 20px}
+  .post-faq .faq-a p{color:var(--slate);font-size:1.02rem;line-height:1.65;margin:0 0 10px}
+  .post-faq .faq-a p:last-child{margin-bottom:0}
+  .post-faq .faq-a ul{margin:8px 0 4px}
+  .post-faq{scroll-margin-top:104px}
