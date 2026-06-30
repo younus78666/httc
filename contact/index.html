@@ -140,11 +140,39 @@
     <div class="cform reveal d1">
       <h3>Contact Form</h3>
       <form id="contactForm" novalidate>
-        <div class="fld"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" placeholder="Your name" required></div>
-        <div class="fld"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" placeholder="Email" required></div>
-        <div class="fld"><label for="cf-phone">Phone Number</label><input id="cf-phone" name="phone" type="tel" placeholder="Phone Number"></div>
-        <div class="fld"><label for="cf-msg">Your message (optional)</label><textarea id="cf-msg" name="message" placeholder="Your message (optional)"></textarea></div>
-        <label class="consent"><input type="checkbox" id="cf-consent" required> I have read the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and agree that my data will be processed by Raken AG for the purpose of my enquiry and, if relevant to my training enrolment, shared with training partners in Turkey.</label>
+        <div class="fld-row">
+          <div class="fld"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" placeholder="Your name" required></div>
+          <div class="fld"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" placeholder="Email" required></div>
+        </div>
+        <div class="fld-row">
+          <div class="fld"><label for="cf-phone">Phone number</label><input id="cf-phone" name="phone" type="tel" placeholder="Phone number"></div>
+          <div class="fld"><label for="cf-country">Country</label><input id="cf-country" name="country" type="text" placeholder="Country"></div>
+        </div>
+        <div class="fld-row">
+          <div class="fld"><label for="cf-interest">I am interested in</label>
+            <select id="cf-interest" name="interest">
+              <option value="" disabled selected>Select an option</option>
+              <option>FUE Training Course</option>
+              <option>FUE Workshop</option>
+              <option>Pricing and registration</option>
+              <option>Schedule and dates</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+          <div class="fld"><label for="cf-level">Your background</label>
+            <select id="cf-level" name="level">
+              <option value="" disabled selected>Select an option</option>
+              <option>Resident or in training</option>
+              <option>General practitioner</option>
+              <option>Dermatologist</option>
+              <option>Plastic or aesthetic surgeon</option>
+              <option>Already performing FUE</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="fld"><label for="cf-msg">Your message (optional)</label><textarea id="cf-msg" name="message" placeholder="Tell us about your experience level and preferred training dates"></textarea></div>
+        <label class="consent"><input type="checkbox" id="cf-consent" required><span>I have read the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and agree that my data will be processed by Raken AG for the purpose of my enquiry and, if relevant to my training enrolment, shared with training partners in Turkey.</span></label>
         <button type="submit" class="btn btn-primary">Send <span class="arr">→</span></button>
       </form>
     </div>
@@ -260,12 +288,19 @@
   if(cf){cf.addEventListener('submit',function(e){
     e.preventDefault();
     if(!document.getElementById('cf-consent').checked){alert('Please agree to the Privacy Policy to continue.');return;}
-    const n=encodeURIComponent(document.getElementById('cf-name').value);
-    const em=document.getElementById('cf-email').value;
-    const ph=document.getElementById('cf-phone').value;
-    const ms=document.getElementById('cf-msg').value;
-    const body=encodeURIComponent('Name: '+document.getElementById('cf-name').value+'\nEmail: '+em+'\nPhone: '+ph+'\n\n'+ms);
-    window.location.href='mailto:info@hairtransplant-trainingcenter.com?subject=Training%20enquiry%20from%20'+n+'&body='+body;
+    const g=id=>document.getElementById(id).value;
+    const n=encodeURIComponent(g('cf-name'));
+    const interest=g('cf-interest');
+    const subj=encodeURIComponent((interest?interest+' enquiry':'Training enquiry')+' from '+g('cf-name'));
+    const body=encodeURIComponent(
+      'Name: '+g('cf-name')+
+      '\nEmail: '+g('cf-email')+
+      '\nPhone: '+g('cf-phone')+
+      '\nCountry: '+g('cf-country')+
+      '\nInterested in: '+interest+
+      '\nBackground: '+g('cf-level')+
+      '\n\n'+g('cf-msg'));
+    window.location.href='mailto:info@hairtransplant-trainingcenter.com?subject='+subj+'&body='+body;
   });}
 </script>
 </body>

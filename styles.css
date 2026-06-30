@@ -927,3 +927,15 @@
     .cmap-frame iframe{height:360px}
     .cmap-card{position:static;width:auto;max-width:none;border-radius:0;border-left:0;border-right:0;border-bottom:0;box-shadow:none;backdrop-filter:none}
   }
+
+  /* ===== CONTACT FORM: selects, rows, sticky info ===== */
+  .fld-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:560px){.fld-row{grid-template-columns:1fr;gap:0}}
+  .cform select{width:100%;padding:14px 42px 14px 16px;border:1px solid var(--line);border-radius:10px;font-family:'Lexend',sans-serif;font-size:.96rem;color:var(--ink);background-color:var(--paper);transition:border-color .2s,background-color .2s;appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23586879' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+  .cform select:focus{outline:none;border-color:var(--cyan);background-color:#fff}
+  .cform select:invalid{color:var(--slate)}
+  /* consent: checkbox + flowing text */
+  .consent span{flex:1}
+  /* sticky left info cards */
+  .cinfo{position:sticky;top:100px}
+  @media(max-width:860px){.cinfo{position:static;top:auto}}
