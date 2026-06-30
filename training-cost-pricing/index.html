@@ -145,7 +145,9 @@
 .pr-cta-list{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:12px}
 .pr-cta-list li{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;font-size:1.02rem;color:#e6eefb}
 .pr-cta-list li strong{color:#fff}
-.pr-cta-list a{color:#fff;font-weight:600;text-decoration:underline;word-break:break-word}
+.pr-cta-list a{color:var(--cyan);font-weight:600;text-decoration:none;word-break:break-word}
+.pr-cta-list li{color:#cfe0f3;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;font-size:1.02rem}
+.pr-cta-list li strong{color:#fff}
 .pr-cta-list a:hover{text-decoration:underline}
 .pr-cta-btns{display:flex;flex-direction:column;gap:14px}
 .pr-cta-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:26px;
@@ -495,31 +497,27 @@
   </div>
 </section>
 
-<!-- ============ 6. READY TO INVEST (gradient CTA band) ============ -->
-<section class="pr-cta">
+<!-- ============ 6. READY TO INVEST (priceband CTA, matches course page) ============ -->
+<section class="priceband">
   <div class="wrap">
-    <div class="pr-cta-band reveal">
-    <div class="pr-cta-in">
+    <div class="priceband-in">
       <div>
-        <span class="pr-eyebrow-light">Ready to Invest in Your Surgical Skills?</span>
-        <div class="pr-pp">USD <span>5,000</span> per day</div>
-        <p class="pr-cta-sub">Contact HTTC to discuss your training goals, check available dates and customize your program:</p>
-        <ul class="pr-cta-list">
+        <span class="eyebrow">Ready to Invest in Your Surgical Skills?</span>
+        <div class="pp" style="margin-top:14px">USD <span>5,000</span> per day</div>
+        <p class="psub">Contact HTTC to discuss your training goals, check available dates and customize your program:</p>
+        <ul class="pr-cta-list" style="margin-top:18px">
           <li><strong>Email:</strong> <a href="mailto:info@hairtransplant-trainingcenter.com">info@hairtransplant-trainingcenter.com</a></li>
           <li><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send?phone=41765694284&text=Hi, I am interested in HTTC training pricing" target="_blank" rel="noopener">+41 76 569 42 84</a></li>
         </ul>
       </div>
-      <div class="pr-cta-card">
-        <div class="pr-cta-btns">
-          <a href="/schedule-and-registration/" class="btn btn-primary">Schedule and register <span class="arr">→</span></a>
-          <a href="https://api.whatsapp.com/send?phone=41765694284" class="pr-btn-wht">Ask on WhatsApp</a>
-        </div>
+      <div class="pcta">
+        <a href="/schedule-and-registration/" class="btn btn-primary">Schedule and register <span class="arr">→</span></a>
+        <a href="https://api.whatsapp.com/send?phone=41765694284" class="btn btn-ghost">Ask on WhatsApp</a>
       </div>
     </div>
-    <div class="pr-cta-foot reveal d1">
-      <span class="pr-cta-foot-ic"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <div class="price-strip">
+      <span class="ps-ic"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       <p>Or visit our <a href="/schedule-and-registration/">Schedule and Registration</a> page for more details on training formats and how to register.</p>
-    </div>
     </div>
   </div>
 </section>
