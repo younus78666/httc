@@ -91,15 +91,18 @@
   .sr-cmp tbody tr.sr-cmp-hl td strong{color:var(--navy)}
 
   /* ===== INSTRUCTORS ===== */
-  .sr-inst-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-  .sr-instcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(10,31,61,.35);transition:transform .3s ease,box-shadow .3s ease;text-decoration:none}
-  .sr-instcard:hover{transform:translateY(-4px);box-shadow:0 42px 70px -38px rgba(10,31,61,.45)}
-  .sr-inst-photo{aspect-ratio:16/10;overflow:hidden;background:var(--cream)}
-  .sr-inst-photo img{width:100%;height:100%;object-fit:cover;display:block}
-  .sr-inst-body{padding:28px 30px 32px}
-  .sr-inst-body h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin:0 0 10px;letter-spacing:-.01em}
-  .sr-inst-body p{font-size:.99rem;line-height:1.68;color:var(--slate);margin:0}
-  @media(max-width:760px){.sr-inst-grid{grid-template-columns:1fr}}
+  .sr-inst-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:920px;margin:0 auto}
+  .sr-instcard{display:grid;grid-template-columns:248px 1fr;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(10,31,61,.35);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;text-decoration:none}
+  .sr-instcard:hover{transform:translateY(-4px);box-shadow:0 42px 70px -38px rgba(10,31,61,.45);border-color:rgba(9,167,224,.4)}
+  .sr-inst-photo{overflow:hidden;background:var(--cream)}
+  .sr-inst-photo img{width:100%;height:100%;min-height:260px;object-fit:cover;object-position:top center;display:block}
+  .sr-inst-body{padding:32px 34px;align-self:center}
+  .sr-inst-name{font-size:1.18rem;font-weight:700;color:var(--navy);margin:0 0 9px;letter-spacing:-.01em}
+  .sr-inst-body p{font-size:1rem;line-height:1.7;color:var(--slate);margin:0}
+  .sr-inst-body p strong{color:var(--navy)}
+  .sr-inst-view{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:.82rem;font-weight:700;color:var(--blue)}
+  .sr-instcard:hover .sr-inst-view{color:var(--cyan)}
+  @media(max-width:560px){.sr-instcard{grid-template-columns:1fr}.sr-inst-photo img{min-height:0;aspect-ratio:4/3}}
 
   /* ===== REGISTER ===== */
   .sr-reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:50px;align-items:stretch}
@@ -110,8 +113,9 @@
   .sr-contactcard .sr-cc-ic{flex:none;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center}
   .sr-contactcard .sr-cc-ic svg{width:25px;height:25px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .sr-cc-txt .sr-cc-label{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--blue);margin-bottom:6px}
-  .sr-cc-txt a{font-size:1.04rem;font-weight:700;color:var(--navy);text-decoration:none;word-break:break-word}
-  .sr-cc-txt a:hover{color:var(--blue)}
+  .sr-cc-txt a,.sr-cc-txt .sr-cc-val{font-size:1.04rem;font-weight:700;color:var(--navy);text-decoration:none;word-break:break-word}
+  .sr-contactcard:hover .sr-cc-val{color:var(--blue)}
+  .sr-statbar .hstat .n{font-size:clamp(1.4rem,2.3vw,1.95rem);letter-spacing:-.01em;line-height:1.14}
   .sr-reg-foot{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px}
   @media(min-width:760px){.sr-reg-foot{grid-template-columns:1fr 1fr}}
   .sr-reg-note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:0 24px 50px -44px rgba(10,31,61,.36)}
@@ -227,12 +231,12 @@
 </section>
 
 <!-- STAT BAR -->
-<section class="statbar">
+<section class="statbar sr-statbar">
   <div class="wrap statbar-inner">
     <div class="hstat reveal"><div class="n">USD 5,000</div><div class="l">Per training day</div></div>
-    <div class="hstat reveal d1"><div class="n">1-on-1<span class="u"> or 2-4</span></div><div class="l">Format</div></div>
-    <div class="hstat reveal d2"><div class="n">1 day<span class="u">–4 weeks</span></div><div class="l">Duration</div></div>
-    <div class="hstat reveal d3"><div class="n">HLC<span class="u">, Ankara</span></div><div class="l">Location</div></div>
+    <div class="hstat reveal d1"><div class="n">1-on-1 or 2-4</div><div class="l">Format</div></div>
+    <div class="hstat reveal d2"><div class="n">1 day to 4 weeks</div><div class="l">Duration</div></div>
+    <div class="hstat reveal d3"><div class="n">HLC, Ankara</div><div class="l">Location</div></div>
   </div>
 </section>
 
@@ -269,15 +273,14 @@
       <span class="eyebrow dark">What's included</span>
       <h2>Pricing</h2>
     </div>
-    <div class="sr-pricewrap">
-      <div class="sr-pricecard reveal">
-        <div class="sr-pricecard-in">
-          <span class="sr-price-tag">Per training day</span>
-          <div class="sr-bignum"><span class="sr-cur">USD</span><span class="sr-amt">5,000</span><span class="sr-per">/ day</span></div>
-          <p class="sr-price-lead">HTTC training costs <strong>USD 5,000 per day</strong>. This includes:</p>
-        </div>
+    <div class="sr-pricecard reveal" style="max-width:540px;margin:0 auto 44px">
+      <div class="sr-pricecard-in">
+        <span class="sr-price-tag">Per training day</span>
+        <div class="sr-bignum"><span class="sr-cur">USD</span><span class="sr-amt">5,000</span><span class="sr-per">/ day</span></div>
+        <p class="sr-price-lead">HTTC training costs <strong>USD 5,000 per day</strong>. This includes:</p>
       </div>
-      <ul class="sr-checklist reveal d1">
+    </div>
+    <ul class="sr-checklist reveal d1">
         <li>Hands-on practice on real patients under direct surgeon supervision</li>
         <li>Theoretical instruction (hair anatomy, donor management, hairline design)</li>
         <li>Instrument training including the PCID from Cole Instruments</li>
@@ -285,7 +288,6 @@
         <li>Certificate of completion signed by HTTC instructors</li>
         <li>Accommodation assistance available</li>
       </ul>
-    </div>
   </div>
 </section>
 
@@ -366,15 +368,15 @@
       <a href="/team/dr-ozgur-oztan/" class="sr-instcard reveal">
         <div class="sr-inst-photo"><img src="/images/team/dr-ozgur-oztan.jpg" alt="Dr. Ozgur Oztan, Medical Director of HLC Hairline Clinic" loading="lazy"></div>
         <div class="sr-inst-body">
-          <h3>Dr. Ozgur Oztan</h3>
           <p><strong>Dr. Ozgur Oztan</strong> – Medical Director of HLC Hairline Clinic. Over 20 years of exclusive FUE experience. Founder of the manual extraction methodology and team-based surgical approach used at HLC.</p>
+          <span class="sr-inst-view">View profile <span class="arr">→</span></span>
         </div>
       </a>
       <a href="/team/dr-ali/" class="sr-instcard reveal d1">
         <div class="sr-inst-photo"><img src="/images/team/dr-unknown.jpg" alt="Dr. Ali, Co-founder of HLC and anatomy professor" loading="lazy"></div>
         <div class="sr-inst-body">
-          <h3>Dr. Ali</h3>
           <p><strong>Dr. Ali</strong> – Co-founder of HLC. Anatomy professor at the University of Ankara. Over 20 years of surgical FUE experience. Specializes in complex cases and quality control.</p>
+          <span class="sr-inst-view">View profile <span class="arr">→</span></span>
         </div>
       </a>
     </div>
@@ -396,14 +398,14 @@
         <span class="sr-cc-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
         <span class="sr-cc-txt">
           <span class="sr-cc-label">Email:</span>
-          <a href="mailto:info@hairtransplant-trainingcenter.com">info@hairtransplant-trainingcenter.com</a>
+          <span class="sr-cc-val">info@hairtransplant-trainingcenter.com</span>
         </span>
       </a>
       <a href="https://api.whatsapp.com/send?phone=41765694284&text=Hi, I am interested in HTTC training" target="_blank" rel="noopener" class="sr-contactcard">
         <span class="sr-cc-ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 9.5c0 3 2 5 5 5"/></svg></span>
         <span class="sr-cc-txt">
           <span class="sr-cc-label">WhatsApp:</span>
-          <a href="https://api.whatsapp.com/send?phone=41765694284&text=Hi, I am interested in HTTC training" target="_blank" rel="noopener">+41 76 569 42 84</a>
+          <span class="sr-cc-val">+41 76 569 42 84</span>
         </span>
       </a>
     </div>
