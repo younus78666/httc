@@ -14,6 +14,113 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<style>
+  /* ===== Schedule & Registration bespoke sections (sr- namespace) ===== */
+  .sr-sec{padding:clamp(72px,9vw,116px) 0}
+  .sr-cream{background:var(--cream)}
+  .sr-white{background:var(--white)}
+  .sr-navy{background:linear-gradient(160deg,var(--navy-900),var(--navy) 70%);color:#dfe8f4;position:relative;overflow:hidden}
+
+  /* Shared centered heading block */
+  .sr-head{max-width:760px;margin:0 auto 50px;text-align:center}
+  .sr-head h2{font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;letter-spacing:-.02em;line-height:1.16;color:var(--navy);margin:14px 0 0}
+  .sr-head h2 .em{color:var(--blue)}
+  .sr-head p{color:var(--slate);font-size:1.04rem;line-height:1.7;margin:16px auto 0;max-width:64ch}
+  .sr-navy .sr-head h2{color:#fff}
+  .sr-navy .sr-head p{color:#aebfd6}
+
+  /* eyebrow on dark band */
+  .sr-eyebrow-light{display:inline-flex;align-items:center;gap:.55rem;text-transform:uppercase;font-size:.72rem;letter-spacing:.14em;font-weight:600;color:var(--cyan)}
+  .sr-eyebrow-light::before{content:"";width:26px;height:1px;background:var(--cyan)}
+
+  /* ===== FORMATS: two feature cards + note strip ===== */
+  .sr-formats{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .sr-fcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px 32px;box-shadow:0 30px 60px -40px rgba(10,31,61,.35);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .sr-fcard:hover{transform:translateY(-4px);box-shadow:0 42px 70px -38px rgba(10,31,61,.45);border-color:rgba(9,167,224,.4)}
+  .sr-fic{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .sr-fic svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .sr-fcard h3{font-size:1.18rem;font-weight:700;color:var(--navy);margin:0 0 10px;letter-spacing:-.01em}
+  .sr-fcard p{font-size:1rem;line-height:1.66;color:var(--slate);margin:0}
+  .sr-note{margin-top:24px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:14px;padding:22px 26px;display:flex;align-items:center;gap:16px;box-shadow:0 24px 50px -44px rgba(10,31,61,.4)}
+  .sr-note .sr-note-ic{flex:none;width:44px;height:44px;border-radius:12px;background:rgba(9,167,224,.12);display:flex;align-items:center;justify-content:center}
+  .sr-note .sr-note-ic svg{width:22px;height:22px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .sr-note p{margin:0;color:var(--slate);font-size:1rem;line-height:1.66}
+  .sr-note p strong{color:var(--navy)}
+  @media(max-width:760px){.sr-formats{grid-template-columns:1fr}}
+
+  /* ===== PRICING: price visual + airy checklist ===== */
+  .sr-pricewrap{display:grid;grid-template-columns:.78fr 1.22fr;gap:48px;align-items:center}
+  .sr-pricecard{position:relative;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:22px;padding:2px;box-shadow:0 40px 80px -44px rgba(10,31,61,.5)}
+  .sr-pricecard-in{background:var(--white);border-radius:20px;padding:clamp(28px,4vw,42px);text-align:center}
+  .sr-price-tag{display:inline-block;background:var(--cream);border:1px solid var(--line);color:var(--blue);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:6px 14px;border-radius:999px}
+  .sr-bignum{display:flex;align-items:flex-start;justify-content:center;gap:6px;margin:22px 0 6px;color:var(--navy);font-weight:800;line-height:.92}
+  .sr-bignum .sr-cur{font-size:1.3rem;font-weight:700;margin-top:10px;color:var(--slate)}
+  .sr-bignum .sr-amt{font-size:clamp(3.2rem,8vw,4.6rem);letter-spacing:-.02em}
+  .sr-bignum .sr-per{font-size:1.2rem;font-weight:600;color:var(--slate);align-self:flex-end;margin-bottom:12px}
+  .sr-price-lead{color:var(--ink);font-size:1.06rem;line-height:1.7;margin:0 0 22px}
+  .sr-price-lead strong{color:var(--navy)}
+  .sr-checklist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .sr-checklist li{position:relative;padding:16px 16px 16px 48px;background:var(--cream);border:1px solid var(--line);border-radius:13px;font-size:.96rem;line-height:1.56;color:var(--slate)}
+  .sr-checklist li::before{content:"";position:absolute;left:16px;top:17px;width:20px;height:20px;border-radius:50%;background:var(--cyan);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/16px no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/16px no-repeat}
+  @media(max-width:860px){.sr-pricewrap{grid-template-columns:1fr;gap:34px}}
+
+  /* ===== DIFFERENT (dark band) ===== */
+  .sr-diff-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;position:relative;z-index:2}
+  .sr-diff::after{content:"";position:absolute;right:-8%;top:-30%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(9,167,224,.2),transparent 68%);pointer-events:none}
+  .sr-diff-lockup{border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:34px 32px;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02))}
+  .sr-diff-mark{font-size:clamp(2.6rem,6vw,4rem);font-weight:800;line-height:.98;letter-spacing:-.03em;color:#fff}
+  .sr-diff-mark span{color:var(--cyan)}
+  .sr-diff-sub{margin-top:16px;font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.92);line-height:1.45}
+  .sr-diff h2{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800;letter-spacing:-.02em;margin:14px 0 18px;color:#fff;line-height:1.16}
+  .sr-diff p{color:rgba(255,255,255,.84);font-size:1.05rem;line-height:1.78;margin:0 0 16px}
+  .sr-diff p:last-child{margin-bottom:0}
+  .sr-diff p strong{color:var(--cyan)}
+  @media(max-width:860px){.sr-diff-grid{grid-template-columns:1fr;gap:36px}}
+
+  /* ===== COMPARISON TABLE ===== */
+  .sr-cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:18px;border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(10,31,61,.35)}
+  .sr-cmp{border-collapse:collapse;width:100%;min-width:720px;background:var(--white);font-size:.96rem}
+  .sr-cmp thead th{background:var(--navy);color:#eaf1fb;text-align:left;padding:18px 18px;font-weight:600;font-size:.92rem;vertical-align:bottom}
+  .sr-cmp tbody td{padding:16px 18px;border-bottom:1px solid var(--line);color:var(--slate);line-height:1.5;vertical-align:top}
+  .sr-cmp tbody tr:last-child td{border-bottom:0}
+  .sr-cmp tbody td:first-child{color:var(--navy);font-weight:700;background:var(--cream)}
+  .sr-cmp tbody tr.sr-cmp-hl td{background:rgba(9,167,224,.07);color:var(--navy);font-weight:600}
+  .sr-cmp tbody tr.sr-cmp-hl td:first-child{background:rgba(9,167,224,.14);border-left:2px solid var(--cyan)}
+  .sr-cmp tbody tr.sr-cmp-hl td strong{color:var(--navy)}
+
+  /* ===== INSTRUCTORS ===== */
+  .sr-inst-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .sr-instcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(10,31,61,.35);transition:transform .3s ease,box-shadow .3s ease;text-decoration:none}
+  .sr-instcard:hover{transform:translateY(-4px);box-shadow:0 42px 70px -38px rgba(10,31,61,.45)}
+  .sr-inst-photo{aspect-ratio:16/10;overflow:hidden;background:var(--cream)}
+  .sr-inst-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .sr-inst-body{padding:28px 30px 32px}
+  .sr-inst-body h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin:0 0 10px;letter-spacing:-.01em}
+  .sr-inst-body p{font-size:.99rem;line-height:1.68;color:var(--slate);margin:0}
+  @media(max-width:760px){.sr-inst-grid{grid-template-columns:1fr}}
+
+  /* ===== REGISTER ===== */
+  .sr-reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:50px;align-items:stretch}
+  .sr-reg-intro{max-width:760px;margin:0 auto;text-align:center}
+  .sr-reg-intro p{color:var(--slate);font-size:1.05rem;line-height:1.78;margin:0}
+  .sr-contactcard{display:flex;align-items:flex-start;gap:18px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 30px;box-shadow:0 30px 60px -44px rgba(10,31,61,.3);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .sr-contactcard:hover{transform:translateY(-4px);box-shadow:0 40px 70px -40px rgba(10,31,61,.42);border-color:rgba(9,167,224,.4)}
+  .sr-contactcard .sr-cc-ic{flex:none;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center}
+  .sr-contactcard .sr-cc-ic svg{width:25px;height:25px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .sr-cc-txt .sr-cc-label{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--blue);margin-bottom:6px}
+  .sr-cc-txt a{font-size:1.04rem;font-weight:700;color:var(--navy);text-decoration:none;word-break:break-word}
+  .sr-cc-txt a:hover{color:var(--blue)}
+  .sr-reg-foot{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px}
+  @media(min-width:760px){.sr-reg-foot{grid-template-columns:1fr 1fr}}
+  .sr-reg-note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:0 24px 50px -44px rgba(10,31,61,.36)}
+  .sr-reg-note p{margin:0;color:var(--slate);font-size:1rem;line-height:1.68}
+  .sr-reg-note p a{color:var(--blue);font-weight:600}
+  .sr-reg-note .sr-rn-tag{display:inline-flex;align-items:center;gap:9px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--blue);margin-bottom:12px}
+  .sr-reg-note .sr-rn-tag svg{width:18px;height:18px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  @media(max-width:760px){.sr-reg-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -119,18 +226,58 @@
   </div>
 </section>
 
-<!-- BODY -->
-<section class="docbody">
-  <div class="wrap docbody-grid">
-    <div class="doc-article reveal">
-      <h3>Training Formats</h3>
-      <p><strong>One-on-One Training</strong> – Dedicated hands-on instruction with direct supervision from our senior surgeons. You work on real patients from day one. Ideal for focused skill development at your own pace.</p>
-      <p><strong>Small Group Workshops</strong> – 2 to 4 participants per session. Collaborative learning environment with ample hands-on time for each participant. Benefit from observing different cases and techniques across the group.</p>
-      <p><strong>Duration</strong> ranges from intensive 1-day courses to comprehensive 4-week programs, depending on your experience level and goals.</p>
+<!-- STAT BAR -->
+<section class="statbar">
+  <div class="wrap statbar-inner">
+    <div class="hstat reveal"><div class="n">USD 5,000</div><div class="l">Per training day</div></div>
+    <div class="hstat reveal d1"><div class="n">1-on-1<span class="u"> or 2-4</span></div><div class="l">Format</div></div>
+    <div class="hstat reveal d2"><div class="n">1 day<span class="u">–4 weeks</span></div><div class="l">Duration</div></div>
+    <div class="hstat reveal d3"><div class="n">HLC<span class="u">, Ankara</span></div><div class="l">Location</div></div>
+  </div>
+</section>
 
-      <h3>Pricing</h3>
-      <p>HTTC training costs <strong>USD 5,000 per day</strong>. This includes:</p>
-      <ul>
+<!-- ============ 1. TRAINING FORMATS ============ -->
+<section class="sr-sec sr-cream">
+  <div class="wrap">
+    <div class="sr-head reveal">
+      <span class="eyebrow dark">How you train</span>
+      <h2>Training <span class="em">Formats</span></h2>
+    </div>
+    <div class="sr-formats">
+      <div class="sr-fcard reveal">
+        <span class="sr-fic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span>
+        <h3>One-on-One Training</h3>
+        <p><strong>One-on-One Training</strong> – Dedicated hands-on instruction with direct supervision from our senior surgeons. You work on real patients from day one. Ideal for focused skill development at your own pace.</p>
+      </div>
+      <div class="sr-fcard reveal d1">
+        <span class="sr-fic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M2 20v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/><circle cx="18" cy="9" r="2.6"/><path d="M17 14a4.5 4.5 0 0 1 5 4.5V20"/></svg></span>
+        <h3>Small Group Workshops</h3>
+        <p><strong>Small Group Workshops</strong> – 2 to 4 participants per session. Collaborative learning environment with ample hands-on time for each participant. Benefit from observing different cases and techniques across the group.</p>
+      </div>
+    </div>
+    <div class="sr-note reveal d2">
+      <span class="sr-note-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+      <p><strong>Duration</strong> ranges from intensive 1-day courses to comprehensive 4-week programs, depending on your experience level and goals.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. PRICING ============ -->
+<section class="sr-sec sr-white">
+  <div class="wrap">
+    <div class="sr-head reveal">
+      <span class="eyebrow dark">What's included</span>
+      <h2>Pricing</h2>
+    </div>
+    <div class="sr-pricewrap">
+      <div class="sr-pricecard reveal">
+        <div class="sr-pricecard-in">
+          <span class="sr-price-tag">Per training day</span>
+          <div class="sr-bignum"><span class="sr-cur">USD</span><span class="sr-amt">5,000</span><span class="sr-per">/ day</span></div>
+          <p class="sr-price-lead">HTTC training costs <strong>USD 5,000 per day</strong>. This includes:</p>
+        </div>
+      </div>
+      <ul class="sr-checklist reveal d1">
         <li>Hands-on practice on real patients under direct surgeon supervision</li>
         <li>Theoretical instruction (hair anatomy, donor management, hairline design)</li>
         <li>Instrument training including the PCID from Cole Instruments</li>
@@ -138,14 +285,36 @@
         <li>Certificate of completion signed by HTTC instructors</li>
         <li>Accommodation assistance available</li>
       </ul>
+    </div>
+  </div>
+</section>
 
-      <h3>What Makes HTTC Different</h3>
+<!-- ============ 3. WHAT MAKES HTTC DIFFERENT (dark band) ============ -->
+<section class="sr-sec sr-navy sr-diff">
+  <div class="wrap sr-diff-grid">
+    <div class="sr-diff-lockup reveal">
+      <div class="sr-diff-mark">Hands-on,<br><span>not observed</span></div>
+      <div class="sr-diff-sub">Real patients. Real extractions and implantations. Under direct supervision.</div>
+    </div>
+    <div class="reveal d1">
+      <span class="sr-eyebrow-light">What makes HTTC different</span>
+      <h2>What Makes HTTC Different</h2>
       <p>Most hair transplant training programs worldwide charge thousands of dollars for <strong>observation only</strong>, you watch, but never touch a patient. HTTC is one of the only training centers globally where participants <strong>perform extractions and implantations themselves</strong> on real patients, under direct supervision of surgeons with over 20 years of FUE experience.</p>
       <p>Turkey is one of the few countries where hands-on training on real patients is legally permitted, providing practical surgical experience that cadaver-based or simulation-only courses simply cannot match.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>How HTTC Compares</h3>
-      <div class="ctable-wrap">
-        <table class="ctable">
+<!-- ============ 4. HOW HTTC COMPARES ============ -->
+<section class="sr-sec sr-cream">
+  <div class="wrap">
+    <div class="sr-head reveal">
+      <span class="eyebrow dark">Side by side</span>
+      <h2>How HTTC <span class="em">Compares</span></h2>
+    </div>
+    <div class="reveal d1">
+      <div class="sr-cmp-wrap">
+        <table class="sr-cmp">
           <thead>
             <tr>
               <th>Program</th>
@@ -155,7 +324,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="sr-cmp-hl">
               <td><strong>HTTC (Turkey)</strong></td>
               <td><strong>USD 5,000/day</strong></td>
               <td><strong>Yes, extractions and implantations</strong></td>
@@ -182,38 +351,93 @@
           </tbody>
         </table>
       </div>
+    </div>
+  </div>
+</section>
 
-      <h3>Your Instructors</h3>
-      <p><strong>Dr. Ozgur Oztan</strong> – Medical Director of HLC Hairline Clinic. Over 20 years of exclusive FUE experience. Founder of the manual extraction methodology and team-based surgical approach used at HLC.</p>
-      <p><strong>Dr. Ali</strong> – Co-founder of HLC. Anatomy professor at the University of Ankara. Over 20 years of surgical FUE experience. Specializes in complex cases and quality control.</p>
+<!-- ============ 5. YOUR INSTRUCTORS ============ -->
+<section class="sr-sec sr-white">
+  <div class="wrap">
+    <div class="sr-head reveal">
+      <span class="eyebrow dark">Who teaches you</span>
+      <h2>Your <span class="em">Instructors</span></h2>
+    </div>
+    <div class="sr-inst-grid">
+      <a href="/team/dr-ozgur-oztan/" class="sr-instcard reveal">
+        <div class="sr-inst-photo"><img src="/images/team/dr-ozgur-oztan.jpg" alt="Dr. Ozgur Oztan, Medical Director of HLC Hairline Clinic" loading="lazy"></div>
+        <div class="sr-inst-body">
+          <h3>Dr. Ozgur Oztan</h3>
+          <p><strong>Dr. Ozgur Oztan</strong> – Medical Director of HLC Hairline Clinic. Over 20 years of exclusive FUE experience. Founder of the manual extraction methodology and team-based surgical approach used at HLC.</p>
+        </div>
+      </a>
+      <a href="/team/dr-ali/" class="sr-instcard reveal d1">
+        <div class="sr-inst-photo"><img src="/images/team/dr-unknown.jpg" alt="Dr. Ali, Co-founder of HLC and anatomy professor" loading="lazy"></div>
+        <div class="sr-inst-body">
+          <h3>Dr. Ali</h3>
+          <p><strong>Dr. Ali</strong> – Co-founder of HLC. Anatomy professor at the University of Ankara. Over 20 years of surgical FUE experience. Specializes in complex cases and quality control.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
-      <h3>How to Register</h3>
+<!-- ============ 6. HOW TO REGISTER ============ -->
+<section class="sr-sec sr-cream">
+  <div class="wrap">
+    <div class="sr-head reveal">
+      <span class="eyebrow dark">Book your dates</span>
+      <h2>How to <span class="em">Register</span></h2>
+    </div>
+    <div class="sr-reg-intro reveal">
       <p>Training sessions are scheduled individually based on participant availability and the surgical calendar at HLC Hairline Clinic. To discuss available dates and customize your training program:</p>
-      <ul>
-        <li><strong>Email:</strong> <a href="mailto:info@hairtransplant-trainingcenter.com">info@hairtransplant-trainingcenter.com</a></li>
-        <li><strong>WhatsApp:</strong> <a href="https://api.whatsapp.com/send?phone=41765694284&text=Hi, I am interested in HTTC training" target="_blank" rel="noopener">+41 76 569 42 84</a></li>
-      </ul>
-      <p>Please include your medical background, area of interest (FUE extraction, implantation, body hair transplant, etc.) and preferred dates. We typically confirm availability within 48 hours.</p>
+    </div>
+    <div class="sr-reg-grid reveal d1">
+      <a href="mailto:info@hairtransplant-trainingcenter.com" class="sr-contactcard">
+        <span class="sr-cc-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <span class="sr-cc-txt">
+          <span class="sr-cc-label">Email:</span>
+          <a href="mailto:info@hairtransplant-trainingcenter.com">info@hairtransplant-trainingcenter.com</a>
+        </span>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=41765694284&text=Hi, I am interested in HTTC training" target="_blank" rel="noopener" class="sr-contactcard">
+        <span class="sr-cc-ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 9.5c0 3 2 5 5 5"/></svg></span>
+        <span class="sr-cc-txt">
+          <span class="sr-cc-label">WhatsApp:</span>
+          <a href="https://api.whatsapp.com/send?phone=41765694284&text=Hi, I am interested in HTTC training" target="_blank" rel="noopener">+41 76 569 42 84</a>
+        </span>
+      </a>
+    </div>
+    <div class="sr-reg-foot reveal d2">
+      <div class="sr-reg-note">
+        <span class="sr-rn-tag"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>What to include</span>
+        <p>Please include your medical background, area of interest (FUE extraction, implantation, body hair transplant, etc.) and preferred dates. We typically confirm availability within 48 hours.</p>
+      </div>
+      <div class="sr-reg-note">
+        <span class="sr-rn-tag"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9z"/></svg>On completion</span>
+        <p>Every participant receives a <a href="/certificate/">Certificate of Completion</a> signed by the HTTC instructors upon finishing the training program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA (global priceband) ============ -->
+<section class="priceband">
+  <div class="wrap">
+    <div class="priceband-in">
+      <div>
+        <span class="eyebrow">Schedule and Registration</span>
+        <div class="pp" style="margin-top:14px">USD <span>5,000</span> per day</div>
+        <p class="psub">Training sessions are scheduled individually based on participant availability and the surgical calendar at HLC Hairline Clinic. To discuss available dates and customize your training program:</p>
+      </div>
+      <div class="pcta">
+        <a href="mailto:info@hairtransplant-trainingcenter.com" class="btn btn-primary">Email HTTC <span class="arr">→</span></a>
+        <a href="https://api.whatsapp.com/send?phone=41765694284" class="btn btn-ghost">Ask on WhatsApp</a>
+      </div>
+    </div>
+    <div class="price-strip">
+      <span class="ps-ic"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       <p>Every participant receives a <a href="/certificate/">Certificate of Completion</a> signed by the HTTC instructors upon finishing the training program.</p>
     </div>
-
-    <aside class="doc-side">
-      <div class="doc-cta reveal">
-        <h4>Register now</h4>
-        <p>Send your medical background, area of interest and preferred dates. We confirm availability within 48 hours.</p>
-        <a href="mailto:info@hairtransplant-trainingcenter.com" class="btn btn-primary">Email HTTC <span class="arr">→</span></a>
-      </div>
-      <div class="doc-card reveal d1">
-        <h4>Quick facts</h4>
-        <div class="facts">
-          <div class="row"><span class="k">Price</span><span class="v"><span class="em">USD 5,000</span> / day</span></div>
-          <div class="row"><span class="k">Format</span><span class="v">1-on-1 or 2-4 group</span></div>
-          <div class="row"><span class="k">Duration</span><span class="v">1 day to 4 weeks</span></div>
-          <div class="row"><span class="k">Location</span><span class="v">HLC, Ankara</span></div>
-        </div>
-      </div>
-      <a href="/hair-transplant-training-course/" class="doc-back">→ Review the full course</a>
-    </aside>
   </div>
 </section>
 
