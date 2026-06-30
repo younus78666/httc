@@ -36,7 +36,7 @@
   background:linear-gradient(135deg,var(--blue),var(--cyan));
   box-shadow:0 40px 80px -44px rgba(10,31,61,.5)}
 .pr-pricecard-in{background:var(--white);border-radius:20px;padding:clamp(28px,4vw,52px);display:grid;grid-template-columns:1fr;gap:34px}
-@media(min-width:920px){.pr-pricecard-in{grid-template-columns:.95fr 1.15fr;align-items:start}}
+@media(min-width:760px){.pr-pricecard-in{grid-template-columns:.82fr 1fr;align-items:center;gap:44px}.pr-price-right2{border-left:1px solid var(--line);padding-left:44px}}
 .pr-price-left{position:relative}
 .pr-price-tag{display:inline-block;background:var(--cream);border:1px solid var(--line);color:var(--blue);
   font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:6px 14px;border-radius:999px}
@@ -50,8 +50,9 @@
 .pr-price-note strong{color:var(--navy)}
 .pr-price-btns{display:flex;flex-wrap:wrap;gap:12px}
 .pr-incl-h{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--blue);margin:0 0 16px}
-.pr-checklist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:12px}
-@media(min-width:560px){.pr-checklist{grid-template-columns:1fr 1fr}}
+.pr-incl-out{margin-top:30px}
+.pr-incl-out .pr-incl-h{text-align:center}
+.pr-checklist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .pr-checklist li{position:relative;padding:14px 14px 14px 44px;background:var(--cream);border:1px solid var(--line);border-radius:13px;
   font-size:.94rem;line-height:1.55;color:var(--slate)}
 .pr-checklist li strong{display:block;color:var(--navy);font-weight:700;margin-bottom:2px}
@@ -291,6 +292,8 @@
           <div class="pr-price-left">
             <span class="pr-price-tag">Per training day</span>
             <div class="pr-bignum"><span class="pr-cur">USD</span><span class="pr-amt">5,000</span><span class="pr-per">/ day</span></div>
+          </div>
+          <div class="pr-price-right2">
             <p class="pr-price-lead">HTTC training costs <strong>USD 5,000 per day</strong>. Every training day includes:</p>
             <p class="pr-price-note">Training sessions are available as <strong>1-day intensive courses</strong> up to <strong>4-week comprehensive programs</strong>, in one-on-one or small group format (2-4 participants).</p>
             <div class="pr-price-btns">
@@ -298,19 +301,19 @@
               <a href="https://api.whatsapp.com/send?phone=41765694284" class="btn btn-outline">Ask on WhatsApp</a>
             </div>
           </div>
-          <div class="pr-price-right">
-            <p class="pr-incl-h">Every training day includes</p>
-            <ul class="pr-checklist">
-              <li><strong>Real hands-on surgical practice</strong> · You perform FUE extractions and implantations on actual patients</li>
-              <li><strong>Direct surgeon supervision</strong> · One-on-one guidance from instructors with 20+ years of FUE experience</li>
-              <li><strong>Full theoretical instruction</strong> · Hair anatomy, donor management, hairline design, patient assessment</li>
-              <li><strong>Instrument training</strong> · Manual punches, the PCID from Cole Instruments, implantation tools</li>
-              <li><strong>All surgical tools and consumables</strong> · Nothing extra to pay for equipment or materials</li>
-              <li><strong>Certificate of completion</strong> · Signed by HTTC instructors</li>
-              <li><strong>Accommodation assistance</strong> · Help arranging nearby hotels in Ankara</li>
-            </ul>
-          </div>
         </div>
+      </div>
+      <div class="pr-incl-out">
+        <p class="pr-incl-h">What is included every training day</p>
+        <ul class="pr-checklist">
+          <li><strong>Real hands-on surgical practice</strong> · You perform FUE extractions and implantations on actual patients</li>
+          <li><strong>Direct surgeon supervision</strong> · One-on-one guidance from instructors with 20+ years of FUE experience</li>
+          <li><strong>Full theoretical instruction</strong> · Hair anatomy, donor management, hairline design, patient assessment</li>
+          <li><strong>Instrument training</strong> · Manual punches, the PCID from Cole Instruments, implantation tools</li>
+          <li><strong>All surgical tools and consumables</strong> · Nothing extra to pay for equipment or materials</li>
+          <li><strong>Certificate of completion</strong> · Signed by HTTC instructors</li>
+          <li><strong>Accommodation assistance</strong> · Help arranging nearby hotels in Ankara</li>
+        </ul>
       </div>
     </div>
   </div>
