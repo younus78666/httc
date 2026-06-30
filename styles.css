@@ -820,3 +820,8 @@
   .post-back{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--blue);font-size:.92rem;margin-top:8px}
   .post-back:hover{color:var(--cyan)}
   @media(max-width:680px){.posthero{padding:128px 0 46px}.postband .pimg{margin-top:-26px;border-radius:12px}.post-gallery{grid-template-columns:1fr}}
+
+  /* single post — read next */
+  .readnext{padding:84px 0;background:var(--white);border-top:1px solid var(--line)}
+  .readnext .rn-head{max-width:1200px;margin:0 auto 38px}
+  .readnext .rn-head h2{font-size:clamp(1.6rem,2.4vw,2.1rem);font-weight:600;color:var(--ink);margin-top:10px;line-height:1.2}
