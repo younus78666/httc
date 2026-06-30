@@ -109,7 +109,7 @@
   <div class="subhero-grid"></div>
   <div class="subhero-glow"></div>
   <div class="wrap posthero-inner">
-    <div class="bmeta">Events<span class="dot"></span><span class="date">April 6, 2024</span></div>
+    <div class="bmeta">Events<span class="dot"></span><span class="date">April 6, 2024</span><span class="dot"></span><span>By HTTC Editorial Team</span><span class="dot"></span><span>2 min read</span></div>
     <h1>A unique Hands-on Training hosted by T-LAB Academy in collaboration with Remedex at Ankara HLC Clinic</h1>
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="cur">T-LAB Academy &amp; Remedex Training</span>
@@ -124,9 +124,9 @@
 </section>
 
 <section class="post">
-  <div class="wrap post-wrap">
-    <div class="post-article reveal">
-      <h2>Exclusive Invitation: T-LAB Academy &amp; Remedex Formation in Ankara, Türkiye</h2>
+  <div class="wrap postlayout">
+    <div class="post-main">
+      <div class="post-article reveal"><h2 id="h0-exclusive-invitation-t-lab-academy-amp-r">Exclusive Invitation: T-LAB Academy &amp; Remedex Formation in Ankara, Türkiye</h2>
       <p>Welcome to an exclusive invitation to T-LAB Academy &amp; Remedex Formation in Ankara, Türkiye!</p>
       <p>Discover the forefront of regenerative surgeries in hair restoration, where theory seamlessly transitions into practice over two transformative days.</p>
       <p><strong>Limited to only 12 participants</strong>, this day offers a deep dive into the details of regenerative surgery in hair restoration.</p>
@@ -179,37 +179,46 @@
       Sincerely yours // Saygılarımızla // Atentamente</p>
       <p><strong>T-LAB Academy Team</strong></p>
 
-      <p style="margin-top:36px"><a href="/blog/" class="post-back">← Back to the blog</a></p>
+      <p style="margin-top:36px"><a href="/blog/" class="post-back">← Back to the blog</a></p></div>
     </div>
+    <aside class="post-side reveal d1">
+      <div class="side-card">
+        <h4>Search the blog</h4>
+        <form id="blogsearchform" class="side-searchform">
+          <input id="blogsearch" type="search" placeholder="Search articles…" aria-label="Search the blog">
+          <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
+        </form>
+      </div>
+      <div class="side-card">
+        <h4>On this page</h4>
+        <nav class="toc">
+          <a href="#h0-exclusive-invitation-t-lab-academy-amp-r">Exclusive Invitation: T-LAB Academy &amp; Remedex Formation in Ankara, Türkiye</a>
+        </nav>
+      </div>
+      <div class="side-card">
+        <h4>Related articles</h4>
+        <a class="side-rel" href="/hair-transplant-workshop-training-2024/">
+          <img src="/images/wp/har-transplant-workshop.jpg" alt="Unique Hands-On Hair Transplant Workshop in Ankara, 2024">
+          <span>Unique Hands-On Hair Transplant Workshop in Ankara, 2024</span>
+        </a>
+        <a class="side-rel" href="/dr-mustafa-from-las-vegas-usa-participated-in-a-hair-transplant-training-from-httc-in-turkey/">
+          <img src="/images/wp/usa_dr_mustafa_hair_transplant_training.jpg" alt="Dr. Mustafa from Las Vegas, USA, trained at HTTC in Turkey">
+          <span>Dr. Mustafa from Las Vegas, USA, trained at HTTC in Turkey</span>
+        </a>
+        <a class="side-rel" href="/hlc-and-the-hair-transplant-training-centre-has-successfully-ended/">
+          <img src="/images/wp/hair-transplant-course-1.jpg" alt="HLC and The Hair Transplant Training Centre has successfully ended">
+          <span>HLC and The Hair Transplant Training Centre has successfully ended</span>
+        </a>
+      </div>
+      <div class="side-card side-cta">
+        <h4>Train hands-on at HTTC</h4>
+        <p>Learn FUE on real patients in Ankara, under surgeons with 20+ years of experience.</p>
+        <a href="/schedule-and-registration/" class="btn btn-primary">Schedule and register <span class="arr">→</span></a>
+      </div>
+    </aside>
   </div>
 </section>
 </article>
-
-<section class="readnext">
-  <div class="wrap">
-    <div class="rn-head reveal">
-      <span class="eyebrow dark">Read next</span>
-      <h2>More from the HTTC blog</h2>
-    </div>
-    <div class="blog-grid">
-      <a class="bcard reveal" href="/hair-transplant-workshop-training-2024/">
-        <div class="bcard-img"><img src="/images/wp/har-transplant-workshop.jpg" alt="Unique Hands-On Hair Transplant Workshop in Ankara, 2024"></div>
-        <h3>Unique Hands-On Hair Transplant Workshop in Ankara, 2024</h3>
-        <span class="read">Read article <span class="arr">→</span></span>
-      </a>
-      <a class="bcard reveal" href="/dr-mustafa-from-las-vegas-usa-participated-in-a-hair-transplant-training-from-httc-in-turkey/">
-        <div class="bcard-img"><img src="/images/wp/usa_dr_mustafa_hair_transplant_training.jpg" alt="Dr. Mustafa from Las Vegas, USA, trained at HTTC in Turkey"></div>
-        <h3>Dr. Mustafa from Las Vegas, USA, trained at HTTC in Turkey</h3>
-        <span class="read">Read article <span class="arr">→</span></span>
-      </a>
-      <a class="bcard reveal" href="/hlc-and-the-hair-transplant-training-centre-has-successfully-ended/">
-        <div class="bcard-img"><img src="/images/wp/hair-transplant-course-1.jpg" alt="HLC and The Hair Transplant Training Centre has successfully ended"></div>
-        <h3>HLC and The Hair Transplant Training Centre has successfully ended</h3>
-        <span class="read">Read article <span class="arr">→</span></span>
-      </a>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="foot-cta">
@@ -296,6 +305,12 @@
   document.getElementById('drawerClose').addEventListener('click',closeD);
   overlay.addEventListener('click',closeD);
   drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeD));
+  var sf=document.getElementById("blogsearchform");
+  if(sf){sf.addEventListener("submit",function(e){e.preventDefault();var q=document.getElementById("blogsearch").value.trim();if(q){window.location.href="https://www.google.com/search?q=site%3Ahttc.vercel.app+"+encodeURIComponent(q);}});}
+  var tl=document.querySelectorAll(".toc a");
+  if(tl.length){var hs=[].map.call(tl,function(a){return document.getElementById(a.getAttribute("href").slice(1));});
+    var spy=function(){var cur=0;for(var i=0;i<hs.length;i++){if(hs[i]&&hs[i].getBoundingClientRect().top<150)cur=i;}for(var j=0;j<tl.length;j++){tl[j].classList.toggle("active",j===cur);}};
+    window.addEventListener("scroll",spy,{passive:true});spy();}
 </script>
 </body>
 </html>
