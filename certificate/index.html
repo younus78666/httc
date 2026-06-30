@@ -41,18 +41,18 @@
 
   /* ANATOMY showcase */
   .cf-anatomy{background:var(--cream)}
-  .cf-anatomy-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:start;margin-top:46px}
-  .cf-anatomy-fig{position:sticky;top:120px}
+  .cf-anatomy-grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:56px;align-items:center;margin-top:46px}
   .cf-anatomy-fig img{width:100%;display:block;border-radius:16px;border:1px solid var(--line);background:#fff;padding:18px;box-shadow:0 30px 60px -40px rgba(10,31,61,.35)}
   .cf-anatomy-fig .cf-figtag{margin-top:16px;display:inline-flex;align-items:center;gap:10px;font-size:.82rem;color:var(--slate)}
   .cf-anatomy-fig .cf-figtag b{color:var(--navy)}
-  .cf-numlist{display:flex;flex-direction:column;gap:4px}
-  .cf-numrow{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:22px 4px;border-bottom:1px solid var(--line);align-items:start}
-  .cf-numrow:last-child{border-bottom:0}
-  .cf-numbadge{width:46px;height:46px;border-radius:13px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.02rem;flex-shrink:0;box-shadow:0 12px 26px -14px rgba(10,31,61,.7)}
-  .cf-numrow h4{font-size:1.12rem;font-weight:700;color:var(--navy);margin:2px 0 6px;letter-spacing:-.01em}
-  .cf-numrow p{font-size:.97rem;line-height:1.65;color:var(--slate);margin:0}
-  @media(max-width:860px){.cf-anatomy-grid{grid-template-columns:1fr;gap:36px}.cf-anatomy-fig{position:static}}
+  .cf-numgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cf-numcard{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px 22px 24px;transition:border-color .25s,box-shadow .25s,transform .25s}
+  .cf-numcard:hover{border-color:rgba(9,167,224,.45);box-shadow:0 26px 46px -30px rgba(10,31,61,.45);transform:translateY(-3px)}
+  .cf-numbadge{width:42px;height:42px;border-radius:12px;background:var(--navy);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.96rem;box-shadow:0 12px 26px -14px rgba(10,31,61,.7)}
+  .cf-numcard h4{font-size:1.06rem;font-weight:700;color:var(--navy);margin:16px 0 5px;letter-spacing:-.01em}
+  .cf-numcard p{font-size:.93rem;line-height:1.58;color:var(--slate);margin:0}
+  @media(max-width:860px){.cf-anatomy-grid{grid-template-columns:1fr;gap:36px}}
+  @media(max-width:560px){.cf-numgrid{grid-template-columns:1fr}}
 
   /* RECOGNITION dark band */
   .cf-recog{background:linear-gradient(150deg,var(--navy-900),var(--navy) 70%);color:#fff;overflow:hidden;position:relative}
@@ -259,14 +259,14 @@
         <img src="/hair-transplant-training-certificate-1.svg" alt="HTTC hair transplant training certificate showing the participant details and instructor signature">
         <span class="cf-figtag"><span class="cf-dot" style="width:8px;height:8px;border-radius:50%;background:var(--cyan);display:inline-block"></span><b>Signed completion certificate</b> · Ankara, Turkey</span>
       </div>
-      <ol class="cf-numlist reveal d1">
-        <li class="cf-numrow"><span class="cf-numbadge">01</span><div><h4>Participant identity</h4><p>and professional role (physician, surgeon, dermatologist)</p></div></li>
-        <li class="cf-numrow"><span class="cf-numbadge">02</span><div><h4>Training format</h4><p>: Course (1-5 days) or Workshop (1-2 days)</p></div></li>
-        <li class="cf-numrow"><span class="cf-numbadge">03</span><div><h4>Techniques covered</h4><p>: manual FUE extraction, stick-and-place implantation, PCID operation, hairline design, donor-area evaluation, graft handling</p></div></li>
-        <li class="cf-numrow"><span class="cf-numbadge">04</span><div><h4>Case exposure</h4><p>: number of live patient cases observed or participated in during the training</p></div></li>
-        <li class="cf-numrow"><span class="cf-numbadge">05</span><div><h4>Instructor confirmation</h4><p>: signed by Dr. Özgür Öztan (Medical Director, HTTC) or the lead instructor of the session</p></div></li>
-        <li class="cf-numrow"><span class="cf-numbadge">06</span><div><h4>Date and location</h4><p>: Ankara, Turkey, with exact training dates</p></div></li>
-      </ol>
+      <div class="cf-numgrid reveal d1">
+        <div class="cf-numcard"><span class="cf-numbadge">01</span><h4>Participant identity</h4><p>and professional role (physician, surgeon, dermatologist)</p></div>
+        <div class="cf-numcard"><span class="cf-numbadge">02</span><h4>Training format</h4><p>: Course (1-5 days) or Workshop (1-2 days)</p></div>
+        <div class="cf-numcard"><span class="cf-numbadge">03</span><h4>Techniques covered</h4><p>: manual FUE extraction, stick-and-place implantation, PCID operation, hairline design, donor-area evaluation, graft handling</p></div>
+        <div class="cf-numcard"><span class="cf-numbadge">04</span><h4>Case exposure</h4><p>: number of live patient cases observed or participated in during the training</p></div>
+        <div class="cf-numcard"><span class="cf-numbadge">05</span><h4>Instructor confirmation</h4><p>: signed by Dr. Özgür Öztan (Medical Director, HTTC) or the lead instructor of the session</p></div>
+        <div class="cf-numcard"><span class="cf-numbadge">06</span><h4>Date and location</h4><p>: Ankara, Turkey, with exact training dates</p></div>
+      </div>
     </div>
   </div>
 </section>
