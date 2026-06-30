@@ -905,3 +905,8 @@
   .blog-cta .btn-primary{background:#fff;color:var(--navy)}
   .blog-cta .btn-primary:hover{background:var(--navy-900);color:#fff;transform:translateY(-2px)}
   @media(max-width:640px){.blog-cta-in{flex-direction:column;align-items:flex-start;padding:42px 0}}
+
+  /* ===== STICKY SPLIT-SECTION IMAGES ===== */
+  .sticky-fig .provide-grid{align-items:start}
+  .sticky-fig .figure{position:sticky;top:100px}
+  @media(max-width:980px){.sticky-fig .figure{position:static;top:auto}}
