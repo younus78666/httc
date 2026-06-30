@@ -14,6 +14,126 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<style>
+  /* ===== Certificate page bespoke sections (cf- prefix) ===== */
+  .cf-sec{padding:108px 0;position:relative}
+  @media(max-width:860px){.cf-sec{padding:72px 0}}
+
+  /* HERO upgrade */
+  .cf-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--navy-900),var(--navy) 62%);color:var(--white);padding:120px 0 100px}
+  .cf-hero .subhero-grid,.cf-hero .subhero-glow{position:absolute;inset:0;pointer-events:none}
+  .cf-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:2}
+  .cf-hero .crumbs{margin-bottom:20px}
+  .cf-hero .crumbs a{color:rgba(255,255,255,.72)}
+  .cf-hero .crumbs .cur{color:var(--cyan)}
+  .cf-hero .crumbs .sep{color:rgba(255,255,255,.4);margin:0 8px}
+  .cf-hero .eyebrow{color:var(--cyan)}
+  .cf-hero .eyebrow::before{background:var(--cyan)}
+  .cf-hero h1{font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1.08;font-weight:800;margin:16px 0 20px;letter-spacing:-.02em}
+  .cf-hero p{color:rgba(255,255,255,.82);font-size:1.06rem;line-height:1.75;max-width:46ch}
+  .cf-hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .cf-hero-cta .btn-outline{color:#fff;border-color:rgba(255,255,255,.32)}
+  .cf-hero-cta .btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+  .cf-cert-frame{position:relative;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:20px;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+  .cf-cert-frame::before{content:"Certificate of completion";position:absolute;top:-12px;left:24px;background:var(--cyan);color:var(--navy-900);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+  .cf-cert-frame img{width:100%;display:block;border-radius:12px;background:#fff;padding:16px}
+  @media(max-width:860px){.cf-hero-grid{grid-template-columns:1fr;gap:36px}}
+
+  /* ANATOMY showcase */
+  .cf-anatomy{background:var(--cream)}
+  .cf-anatomy-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:start;margin-top:46px}
+  .cf-anatomy-fig{position:sticky;top:120px}
+  .cf-anatomy-fig img{width:100%;display:block;border-radius:16px;border:1px solid var(--line);background:#fff;padding:18px;box-shadow:0 30px 60px -40px rgba(10,31,61,.35)}
+  .cf-anatomy-fig .cf-figtag{margin-top:16px;display:inline-flex;align-items:center;gap:10px;font-size:.82rem;color:var(--slate)}
+  .cf-anatomy-fig .cf-figtag b{color:var(--navy)}
+  .cf-numlist{display:flex;flex-direction:column;gap:4px}
+  .cf-numrow{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:22px 4px;border-bottom:1px solid var(--line);align-items:start}
+  .cf-numrow:last-child{border-bottom:0}
+  .cf-numbadge{width:46px;height:46px;border-radius:13px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.02rem;flex-shrink:0;box-shadow:0 12px 26px -14px rgba(10,31,61,.7)}
+  .cf-numrow h4{font-size:1.12rem;font-weight:700;color:var(--navy);margin:2px 0 6px;letter-spacing:-.01em}
+  .cf-numrow p{font-size:.97rem;line-height:1.65;color:var(--slate);margin:0}
+  @media(max-width:860px){.cf-anatomy-grid{grid-template-columns:1fr;gap:36px}.cf-anatomy-fig{position:static}}
+
+  /* RECOGNITION dark band */
+  .cf-recog{background:linear-gradient(150deg,var(--navy-900),var(--navy) 70%);color:#fff;overflow:hidden;position:relative}
+  .cf-recog::after{content:"";position:absolute;right:-10%;top:-30%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(9,167,224,.22),transparent 68%);pointer-events:none}
+  .cf-recog-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;position:relative;z-index:2}
+  .cf-recog .eyebrow{color:var(--cyan)}
+  .cf-recog .eyebrow::before{background:var(--cyan)}
+  .cf-bigmark{font-size:clamp(3.4rem,8vw,6rem);font-weight:800;line-height:.95;letter-spacing:-.03em;color:#fff}
+  .cf-bigmark .cf-cy{color:var(--cyan)}
+  .cf-bigsub{margin-top:14px;font-size:1.18rem;font-weight:600;color:rgba(255,255,255,.92)}
+  .cf-bigsub span{color:var(--cyan)}
+  .cf-recog h2{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800;letter-spacing:-.02em;margin:14px 0 18px}
+  .cf-recog p{color:rgba(255,255,255,.84);font-size:1.04rem;line-height:1.78;margin:0}
+  .cf-recog p strong{color:#fff}
+  @media(max-width:860px){.cf-recog-grid{grid-template-columns:1fr;gap:32px}}
+
+  /* USE CASES */
+  .cf-use{background:#fff}
+  .cf-head{max-width:680px}
+  .cf-head h2{font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin:14px 0 0}
+  .cf-head h2 .em{color:var(--blue);font-weight:800}
+  .cf-usegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:46px}
+  .cf-usecard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px;position:relative;box-shadow:0 30px 60px -40px rgba(10,31,61,.35);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+  .cf-usecard:hover{transform:translateY(-4px);box-shadow:0 40px 70px -38px rgba(10,31,61,.45)}
+  .cf-usecard .cf-uci{position:absolute;top:26px;right:26px;font-size:.78rem;font-weight:700;color:var(--cyan);letter-spacing:.1em}
+  .cf-usecard .cf-icon{width:48px;height:48px;border-radius:13px;background:rgba(30,115,190,.1);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .cf-usecard .cf-icon svg{width:24px;height:24px;fill:none;stroke:var(--blue);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .cf-usecard h4{font-size:1.1rem;font-weight:700;color:var(--navy);margin:0 0 8px}
+  .cf-usecard p{font-size:.96rem;line-height:1.65;color:var(--slate);margin:0}
+  @media(max-width:720px){.cf-usegrid{grid-template-columns:1fr}}
+
+  /* INTERNATIONAL acceptance */
+  .cf-intl{background:var(--cream)}
+  .cf-intl-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .cf-intl h2{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin:14px 0 18px}
+  .cf-intl p{font-size:1.02rem;line-height:1.78;color:var(--slate);margin:0}
+  .cf-pills{display:flex;flex-wrap:wrap;gap:12px}
+  .cf-pill{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-size:.92rem;font-weight:600;color:var(--navy);box-shadow:0 14px 30px -22px rgba(10,31,61,.4)}
+  .cf-pill .cf-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+  .cf-pills-eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:18px;display:block}
+  @media(max-width:860px){.cf-intl-grid{grid-template-columns:1fr;gap:36px}}
+
+  /* ISSUANCE + VERIFICATION */
+  .cf-issue{background:#fff}
+  .cf-panels{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:46px}
+  .cf-panel{border-radius:20px;padding:36px 34px;border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(10,31,61,.35)}
+  .cf-panel-a{background:var(--cream)}
+  .cf-panel-b{background:linear-gradient(155deg,var(--navy-900),var(--navy));color:#fff;border-color:transparent}
+  .cf-panel .cf-ptag{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+  .cf-panel-a .cf-ptag{color:var(--blue)}
+  .cf-panel-b .cf-ptag{color:var(--cyan)}
+  .cf-panel .cf-pico{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .cf-panel-a .cf-pico{background:rgba(30,115,190,.1)}
+  .cf-panel-b .cf-pico{background:rgba(9,167,224,.18)}
+  .cf-panel .cf-pico svg{width:26px;height:26px;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .cf-panel-a .cf-pico svg{stroke:var(--blue)}
+  .cf-panel-b .cf-pico svg{stroke:var(--cyan)}
+  .cf-panel h3{font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin:0 0 12px}
+  .cf-panel-a h3{color:var(--navy)}
+  .cf-panel-b h3{color:#fff}
+  .cf-panel p{font-size:1rem;line-height:1.72;margin:0 0 16px}
+  .cf-panel p:last-child{margin-bottom:0}
+  .cf-panel-a p{color:var(--slate)}
+  .cf-panel-b p{color:rgba(255,255,255,.85)}
+  .cf-panel-a a{color:var(--blue);font-weight:600}
+  .cf-panel-b a{color:var(--cyan);font-weight:600}
+  .cf-verbar{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:.86rem;color:rgba(255,255,255,.7)}
+  @media(max-width:860px){.cf-panels{grid-template-columns:1fr}}
+
+  /* CLOSING CTA */
+  .cf-close{background:linear-gradient(150deg,var(--navy-900),var(--navy) 72%);color:#fff;text-align:center;overflow:hidden;position:relative}
+  .cf-close::after{content:"";position:absolute;left:50%;top:-40%;transform:translateX(-50%);width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(9,167,224,.18),transparent 66%);pointer-events:none}
+  .cf-close-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
+  .cf-close .eyebrow{color:var(--cyan);justify-content:center}
+  .cf-close .eyebrow::before{background:var(--cyan)}
+  .cf-close h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-.02em;margin:16px 0 26px}
+  .cf-close h2 .cf-cy{color:var(--cyan)}
+  .cf-close-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cf-close-cta .btn-outline{color:#fff;border-color:rgba(255,255,255,.32)}
+  .cf-close-cta .btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"Hair Transplant Training Certificate","description":"Every participant who completes an HTTC Hair Transplant Training Course or FUE Workshop receives a formal completion certificate signed by the instructing hair surgeon.","url":"https://httc.vercel.app/certificate/","provider":{"@type":"Organization","name":"Hair Transplant Training Center (HTTC)","url":"https://httc.vercel.app/"}}
 </script>
@@ -105,10 +225,10 @@
 </div>
 
 <!-- HERO -->
-<section class="doc-hero">
+<section class="cf-hero doc-hero">
   <div class="subhero-grid"></div>
   <div class="subhero-glow"></div>
-  <div class="wrap doc-hero-grid">
+  <div class="wrap cf-hero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb">
         <a href="/">Home</a><span class="sep">/</span><span class="cur">Certificate</span>
@@ -116,122 +236,147 @@
       <span class="eyebrow">On completion</span>
       <h1>Hair Transplant Training Certificate</h1>
       <p>Every participant who completes an HTTC Hair Transplant Training Course or FUE Workshop receives a formal completion certificate, signed by the instructing hair surgeon and documenting the techniques practiced, the supervised cases observed or performed, and the total training hours completed in Ankara, Turkey.</p>
-      <div class="hero-cta">
+      <div class="cf-hero-cta">
         <a href="/hair-transplant-training-course/" class="btn btn-primary">View the training course <span class="arr">→</span></a>
-        <a href="/fue-workshop/" class="btn btn-ghost">FUE Workshop</a>
+        <a href="/fue-workshop/" class="btn btn-outline">FUE Workshop</a>
       </div>
     </div>
-    <div class="doc-portrait">
-      <img src="/hair-transplant-training-certificate-1.svg" alt="HTTC hair transplant training certificate of completion" style="aspect-ratio:auto;background:#fff;padding:18px">
+    <div class="cf-cert-frame reveal">
+      <img src="/hair-transplant-training-certificate-1.svg" alt="HTTC hair transplant training certificate of completion">
     </div>
   </div>
 </section>
 
-<!-- STAT BAR -->
-<section class="statbar">
-  <div class="wrap statbar-inner">
-    <div class="hstat reveal"><div class="n">20+<span class="u"> countries</span></div><div class="l">Alumni currently practising</div></div>
-    <div class="hstat reveal d1"><div class="n">ISHRS</div><div class="l">Member instructing surgeons</div></div>
-    <div class="hstat reveal d2"><div class="n">2<span class="u"> copies</span></div><div class="l">Signed physical and digital PDF</div></div>
-    <div class="hstat reveal d3"><div class="n">Signed</div><div class="l">By the instructing surgeon</div></div>
-  </div>
-</section>
-
-<!-- INTRO (split) -->
-<section class="intro sticky-fig">
-  <div class="wrap intro-grid">
-    <div class="reveal">
-      <span class="eyebrow dark">Certificate of completion</span>
-      <h2>Hair Transplant Training Certificate</h2>
-      <p>Every participant who completes an <a href="/hair-transplant-training-course/" style="color:var(--blue);font-weight:600">HTTC Hair Transplant Training Course</a> or an <a href="/fue-workshop/" style="color:var(--blue);font-weight:600">HTTC FUE Workshop</a> receives a formal completion certificate. The certificate is signed by the instructing hair surgeon and documents the techniques practiced, the number of supervised cases observed or performed, and the total training hours completed.</p>
-    </div>
-    <div class="figure reveal d2">
-      <img src="/images/imgi_9_IMG_3864.jpg" alt="Live FUE surgery during supervised training at HLC Hairline Clinic in Ankara">
-      <div class="cap"><div class="ct">Supervised hands-on training</div><div class="cs">HLC Hairline Clinic · Ankara</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT THE CERTIFICATE CONFIRMS (cards) -->
-<section class="tsec tsec-white">
+<!-- ANATOMY OF THE CERTIFICATE -->
+<section class="cf-sec cf-anatomy">
   <div class="wrap">
-    <div class="tsec-head reveal">
-      <span class="eyebrow dark">On the document</span>
+    <div class="cf-head reveal">
+      <span class="eyebrow dark">Anatomy of the certificate</span>
       <h2>What the certificate <span class="em">confirms</span>.</h2>
     </div>
-    <div class="gcards g3">
-      <div class="gcard reveal"><span class="gnum"><svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><h4>Participant identity</h4><p>and professional role (physician, surgeon, dermatologist)</p></div>
-      <div class="gcard reveal d1"><span class="gnum"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></span><h4>Training format</h4><p>: Course (1-5 days) or Workshop (1-2 days)</p></div>
-      <div class="gcard reveal d2"><span class="gnum"><svg viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span><h4>Techniques covered</h4><p>: manual FUE extraction, stick-and-place implantation, PCID operation, hairline design, donor-area evaluation, graft handling</p></div>
-      <div class="gcard reveal"><span class="gnum"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h4>Case exposure</h4><p>: number of live patient cases observed or participated in during the training</p></div>
-      <div class="gcard reveal d1"><span class="gnum"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span><h4>Instructor confirmation</h4><p>: signed by Dr. Özgür Öztan (Medical Director, HTTC) or the lead instructor of the session</p></div>
-      <div class="gcard reveal d2"><span class="gnum"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><h4>Date and location</h4><p>: Ankara, Turkey, with exact training dates</p></div>
+    <div class="cf-anatomy-grid">
+      <div class="cf-anatomy-fig reveal">
+        <img src="/hair-transplant-training-certificate-1.svg" alt="HTTC hair transplant training certificate showing the participant details and instructor signature">
+        <span class="cf-figtag"><span class="cf-dot" style="width:8px;height:8px;border-radius:50%;background:var(--cyan);display:inline-block"></span><b>Signed completion certificate</b> · Ankara, Turkey</span>
+      </div>
+      <ol class="cf-numlist reveal d1">
+        <li class="cf-numrow"><span class="cf-numbadge">01</span><div><h4>Participant identity</h4><p>and professional role (physician, surgeon, dermatologist)</p></div></li>
+        <li class="cf-numrow"><span class="cf-numbadge">02</span><div><h4>Training format</h4><p>: Course (1-5 days) or Workshop (1-2 days)</p></div></li>
+        <li class="cf-numrow"><span class="cf-numbadge">03</span><div><h4>Techniques covered</h4><p>: manual FUE extraction, stick-and-place implantation, PCID operation, hairline design, donor-area evaluation, graft handling</p></div></li>
+        <li class="cf-numrow"><span class="cf-numbadge">04</span><div><h4>Case exposure</h4><p>: number of live patient cases observed or participated in during the training</p></div></li>
+        <li class="cf-numrow"><span class="cf-numbadge">05</span><div><h4>Instructor confirmation</h4><p>: signed by Dr. Özgür Öztan (Medical Director, HTTC) or the lead instructor of the session</p></div></li>
+        <li class="cf-numrow"><span class="cf-numbadge">06</span><div><h4>Date and location</h4><p>: Ankara, Turkey, with exact training dates</p></div></li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- PROFESSIONAL RECOGNITION (split, image left) -->
-<section class="provide sticky-fig">
-  <div class="wrap provide-grid">
-    <div class="figure reveal">
-      <img src="/images/imgi_8_dr_ozgur_1.jpg" alt="Dr. Özgür Öztan, Medical Director at the Hair Transplant Training Center in Ankara">
-      <div class="cap"><div class="ct">Signed by experienced surgeons</div><div class="cs">Several are ISHRS members</div></div>
-    </div>
-    <div class="prov-head reveal d1">
+<!-- RECOGNITION DARK BAND -->
+<section class="cf-sec cf-recog">
+  <div class="wrap cf-recog-grid">
+    <div class="reveal">
       <span class="eyebrow dark">Professional recognition</span>
+      <div class="cf-bigmark">ISHRS</div>
+      <div class="cf-bigsub"><span>1,000+</span> physician members worldwide</div>
+    </div>
+    <div class="reveal d1">
       <h2>Recognised professional development.</h2>
       <p>HTTC certificates document professional development (CME-style) but are not a substitute for formal fellowship accreditation. Several of our instructing surgeons are members of the <strong>International Society of Hair Restoration Surgery (ISHRS)</strong>, the leading global authority on hair restoration with more than 1,000 physician members worldwide. The hands-on case exposure gained at HTTC is frequently cited by attending physicians in applications to hair-restoration societies, continuing-education portfolios, and clinic credentials.</p>
     </div>
   </div>
 </section>
 
-<!-- HOW PHYSICIANS USE IT (checklist, cream) -->
-<section class="tsec" style="background:var(--cream)">
+<!-- HOW PHYSICIANS USE IT (use-case cards) -->
+<section class="cf-sec cf-use">
   <div class="wrap">
-    <div class="tsec-head reveal">
+    <div class="cf-head reveal">
       <span class="eyebrow dark">Put it to work</span>
       <h2>How physicians use the <span class="em">HTTC certificate</span>.</h2>
     </div>
-    <ul class="clist reveal">
-      <li><strong>Clinic credentialing:</strong> document your hair-transplant training to a clinic or hospital employer</li>
-      <li><strong>Insurance and liability:</strong> demonstrate verifiable technique exposure if required by your local regulatory body</li>
-      <li><strong>Patient-facing credentials:</strong> display the certificate in your consultation room or website to build patient trust</li>
-      <li><strong>CME evidence:</strong> submit the certificate as continuing-education evidence where your jurisdiction accepts international training</li>
-      <li><strong>Society-membership applications:</strong> supplement ISHRS or regional-society application packages with documented hands-on hours</li>
-    </ul>
+    <div class="cf-usegrid">
+      <div class="cf-usecard reveal">
+        <span class="cf-uci">01</span>
+        <span class="cf-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-3"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/></svg></span>
+        <h4>Clinic credentialing:</h4>
+        <p>document your hair-transplant training to a clinic or hospital employer</p>
+      </div>
+      <div class="cf-usecard reveal d1">
+        <span class="cf-uci">02</span>
+        <span class="cf-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h4>Insurance and liability:</h4>
+        <p>demonstrate verifiable technique exposure if required by your local regulatory body</p>
+      </div>
+      <div class="cf-usecard reveal d2">
+        <span class="cf-uci">03</span>
+        <span class="cf-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span>
+        <h4>Patient-facing credentials:</h4>
+        <p>display the certificate in your consultation room or website to build patient trust</p>
+      </div>
+      <div class="cf-usecard reveal">
+        <span class="cf-uci">04</span>
+        <span class="cf-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M9 7h6"/><path d="M9 11h4"/></svg></span>
+        <h4>CME evidence:</h4>
+        <p>submit the certificate as continuing-education evidence where your jurisdiction accepts international training</p>
+      </div>
+      <div class="cf-usecard reveal d1">
+        <span class="cf-uci">05</span>
+        <span class="cf-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></span>
+        <h4>Society-membership applications:</h4>
+        <p>supplement ISHRS or regional-society application packages with documented hands-on hours</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- INTERNATIONAL ACCEPTANCE (split) -->
-<section class="intro sticky-fig">
-  <div class="wrap intro-grid">
+<!-- INTERNATIONAL ACCEPTANCE -->
+<section class="cf-sec cf-intl">
+  <div class="wrap cf-intl-grid">
     <div class="reveal">
       <span class="eyebrow dark">International acceptance</span>
       <h2>Alumni from more than 20 countries.</h2>
       <p>Physicians from more than 20 countries have completed HTTC training and are currently practicing hair restoration using the techniques taught in Ankara. Our alumni include surgeons from Germany, Switzerland, Austria, the United Kingdom, the United States, Canada, Brazil, Mexico, Qatar, India and across the EU. The acceptance of the HTTC certificate as evidence of training depends on your own regulatory framework, we recommend verifying with your medical board before booking.</p>
     </div>
-    <div class="figure reveal d2">
-      <img src="/images/imgi_7_hair-transplant-course-3.jpg" alt="International physicians during a practical FUE training session in Ankara">
-      <div class="cap"><div class="ct">Practising worldwide</div><div class="cs">Surgeons across the EU and beyond</div></div>
+    <div class="reveal d1">
+      <span class="cf-pills-eyebrow">Practising worldwide</span>
+      <div class="cf-pills">
+        <span class="cf-pill"><span class="cf-dot"></span>Germany</span>
+        <span class="cf-pill"><span class="cf-dot"></span>Switzerland</span>
+        <span class="cf-pill"><span class="cf-dot"></span>Austria</span>
+        <span class="cf-pill"><span class="cf-dot"></span>United Kingdom</span>
+        <span class="cf-pill"><span class="cf-dot"></span>United States</span>
+        <span class="cf-pill"><span class="cf-dot"></span>Canada</span>
+        <span class="cf-pill"><span class="cf-dot"></span>Brazil</span>
+        <span class="cf-pill"><span class="cf-dot"></span>Mexico</span>
+        <span class="cf-pill"><span class="cf-dot"></span>Qatar</span>
+        <span class="cf-pill"><span class="cf-dot"></span>India</span>
+        <span class="cf-pill"><span class="cf-dot"></span>EU</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- COPIES + VERIFICATION (cards) -->
-<section class="tsec tsec-white">
+<!-- ISSUANCE + VERIFICATION -->
+<section class="cf-sec cf-issue">
   <div class="wrap">
-    <div class="tsec-head reveal">
+    <div class="cf-head reveal">
       <span class="eyebrow dark">Issue and verify</span>
       <h2>Your copies and <span class="em">verification</span>.</h2>
     </div>
-    <div class="gcards g3">
-      <div class="gcard reveal"><span class="gnum"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><h4>Digital and physical copy</h4><p>Each certificate is issued in two formats: a signed physical copy handed to you at the end of your training, and a digital PDF copy emailed to the address you provided during enrolment. The PDF version is watermarked and includes a verification code that allows third parties (employers, societies, regulatory bodies) to confirm the training authenticity directly with HTTC upon request.</p></div>
-      <div class="gcard reveal d1"><span class="gnum"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9z"/></svg></span><h4>Verification</h4><p>To verify a previously issued HTTC certificate, employers and societies may contact us at <a href="mailto:info@hairtransplant-trainingcenter.com" style="color:var(--blue);font-weight:600">info@hairtransplant-trainingcenter.com</a> with the participant name, training date and certificate verification code. We respond to verification requests within 2 business days.</p></div>
-      <div class="gcard reveal d2"><span class="gnum"><svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span><h4>News and articles</h4><p>Read also our <a href="/blog/" style="color:var(--blue);font-weight:600">news and articles</a> for training updates, alumni stories and technical insights from our clinical team.</p></div>
-    </div>
-    <div class="cta-row reveal" style="margin-top:40px;justify-content:center">
-      <a href="/hair-transplant-training-course/" class="btn btn-primary">View the training course <span class="arr">→</span></a>
-      <a href="/fue-workshop/" class="btn btn-outline">FUE Workshop</a>
+    <div class="cf-panels">
+      <div class="cf-panel cf-panel-a reveal">
+        <span class="cf-ptag">Digital PDF copy</span>
+        <span class="cf-pico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+        <h3>Digital and physical copy</h3>
+        <p>Each certificate is issued in two formats: a signed physical copy handed to you at the end of your training, and a digital PDF copy emailed to the address you provided during enrolment. The PDF version is watermarked and includes a verification code that allows third parties (employers, societies, regulatory bodies) to confirm the training authenticity directly with HTTC upon request.</p>
+      </div>
+      <div class="cf-panel cf-panel-b reveal d1">
+        <span class="cf-ptag">Signed physical copy</span>
+        <span class="cf-pico"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9z"/></svg></span>
+        <h3>Verification</h3>
+        <p>To verify a previously issued HTTC certificate, employers and societies may contact us at <a href="mailto:info@hairtransplant-trainingcenter.com">info@hairtransplant-trainingcenter.com</a> with the participant name, training date and certificate verification code. We respond to verification requests within 2 business days.</p>
+        <p>Read also our <a href="/blog/">news and articles</a> for training updates, alumni stories and technical insights from our clinical team.</p>
+        <div class="cf-verbar">Verification responses within 2 business days · participant name + training date + code</div>
+      </div>
     </div>
   </div>
 </section>
