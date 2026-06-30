@@ -115,7 +115,8 @@
   .sr-cc-txt .sr-cc-label{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--blue);margin-bottom:6px}
   .sr-cc-txt a,.sr-cc-txt .sr-cc-val{font-size:1.04rem;font-weight:700;color:var(--navy);text-decoration:none;word-break:break-word}
   .sr-contactcard:hover .sr-cc-val{color:var(--blue)}
-  .sr-statbar .hstat .n{font-size:clamp(1.4rem,2.3vw,1.95rem);letter-spacing:-.01em;line-height:1.14}
+  .sr-statbar .statbar-inner{align-items:start}
+  .sr-statbar .hstat .n{font-size:clamp(1.55rem,2.4vw,2.2rem);letter-spacing:-.01em;line-height:1.15;white-space:nowrap}
   .sr-reg-foot{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px}
   @media(min-width:760px){.sr-reg-foot{grid-template-columns:1fr 1fr}}
   .sr-reg-note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:0 24px 50px -44px rgba(10,31,61,.36)}
@@ -234,9 +235,9 @@
 <section class="statbar sr-statbar">
   <div class="wrap statbar-inner">
     <div class="hstat reveal"><div class="n">USD 5,000</div><div class="l">Per training day</div></div>
-    <div class="hstat reveal d1"><div class="n">1-on-1 or 2-4</div><div class="l">Format</div></div>
-    <div class="hstat reveal d2"><div class="n">1 day to 4 weeks</div><div class="l">Duration</div></div>
-    <div class="hstat reveal d3"><div class="n">HLC, Ankara</div><div class="l">Location</div></div>
+    <div class="hstat reveal d1"><div class="n">1-on-1<span class="u"> or 2-4</span></div><div class="l">Format</div></div>
+    <div class="hstat reveal d2"><div class="n">1 day<span class="u">–4 weeks</span></div><div class="l">Duration</div></div>
+    <div class="hstat reveal d3"><div class="n">HLC<span class="u">, Ankara</span></div><div class="l">Location</div></div>
   </div>
 </section>
 
